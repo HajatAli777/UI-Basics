@@ -13,6 +13,7 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       
+      
       child: Container(
         height: 50,
         width: double.infinity,
