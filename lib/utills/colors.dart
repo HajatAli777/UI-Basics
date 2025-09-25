@@ -1,9 +1,13 @@
 import 'package:flutter/widgets.dart';
 
-class Appcolors{
-  static const primaryColar = Color(0xff347433);
-  static const secondaryColor = Color(0xffFFC107);
-  static const boldText = Color(0xff1D1D1D);
-  static const textColor = Color(0xff999999);
+class AppColors{
+  static const primaryColor = Color(0xff347433);
+  static const strokeColor = Color(0xffFFC107);
+  static const toldTextColor = Color(0xff1D1D1D);
+  static const subtitleTextColor = Color(0xff999999);
+  static const textFieldFillColor = Color(0xffF5F5F5);
+  static const secondaryColor = Color(0xffFFFFFF);
+
+  AppColors(secondaryColor);
 
 }

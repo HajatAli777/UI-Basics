@@ -1,4 +1,5 @@
 import 'package:app/components/Login_form.dart';
+import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => LoginForm()),
+        MaterialPageRoute(builder: (context) => LoginScreen()),
         (route) => false,
       );
     });
@@ -27,6 +28,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Image.asset()));
+    return Scaffold(
+      backgroundColor: AppColors.primaryColor,
+      body: Center(
+        child: Image.asset("assets/Logo.png", height: 100, width: 300),
+      ),
+    );
   }
 }
