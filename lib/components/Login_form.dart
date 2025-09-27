@@ -1,3 +1,4 @@
+import 'package:app/components/ontap_containers.dart';
 import 'package:app/components/primary_button.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
@@ -123,7 +124,7 @@ class LoginScreen extends StatelessWidget {
                                     right: 8.0,
                                     top: 8,
                                   ),
-                                  
+
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -209,11 +210,13 @@ class LoginScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 30,),
+                          const SizedBox(height: 30),
                           PrimaryButton(
                             text: "Login",
-
-                          ),                     
+                            onTap: () {
+                              print('hello');
+                            },
+                          ),
                           const SizedBox(height: 20),
                           Row(
                             children: [
@@ -238,81 +241,73 @@ class LoginScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(height: 30,),
+                          SizedBox(height: 30),
                           Row(
                             children: [
                               Expanded(
-                                child:Container(
-                                height: 70,
-                                width: 108.33,
-                                decoration: BoxDecoration(
-                                  color: AppColors.textFieldFillColor.withValues(
-                                    alpha: 0.2,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color: AppColors.subtitleTextColor,
+                                child: Container(
+                                  height: 70,
+                                  width: 108.33,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.textFieldFillColor
+                                        .withValues(alpha: 0.2),
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: AppColors.subtitleTextColor,
+                                    ),
                                   ),
                                 ),
                               ),
-                              ),
-                              
+
                               const SizedBox(width: 10),
 
                               Expanded(
-                                 child:Container(
-                                height: 70,
-                                width: 108.33,
-                                decoration: BoxDecoration(
-                                  color: AppColors.secondaryColor.withValues(
-                                    alpha: 0.2,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color: AppColors.subtitleTextColor,
-                                  ),
-                                ),
-                              ),
-                              ),
-                              const SizedBox(width: 10,),
-                              Expanded(
-                                 child:Container(
-                                height: 70,
-                                width: 108.33,
-                                decoration: BoxDecoration(
-                                  color: AppColors.textFieldFillColor.withValues(
-                                    alpha: 0.2,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color: AppColors.subtitleTextColor,
+                                child: Container(
+                                  height: 70,
+                                  width: 108.33,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.secondaryColor.withValues(
+                                      alpha: 0.2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: AppColors.subtitleTextColor,
+                                    ),
                                   ),
                                 ),
                               ),
-                              ),
+                              const SizedBox(width: 10),
+                              OntapContainer(
+                                
+                              )
+
                               
                             ],
                           ),
-                          SizedBox(height: 50,),
+                          SizedBox(height: 50),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Don’t have an account?', 
-                              
+                              Text(
+                                'Don’t have an account?',
+
                                 style: TextStyle(
                                   color: AppColors.subtitleTextColor,
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w600,)),
-                                  Text('Create Account?', 
-                                  style: TextStyle(
-                                    color: AppColors.primaryColor,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600
-                                  ),),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text(
+                                'Create Account?',
+                                style: TextStyle(
+                                  color: AppColors.primaryColor,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
                             ],
                           ),
-                          const SizedBox(height: 30,)
-                          
+                          const SizedBox(height: 30),
                         ],
                       ),
                     ),

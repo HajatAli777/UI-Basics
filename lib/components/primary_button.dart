@@ -3,17 +3,18 @@ import 'package:app/utills/colors.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
+  final VoidCallback? onTap; // Allow custom tap function
 
   const PrimaryButton({
     Key? key,
     required this.text,
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      
-      
+      onTap: onTap,
       child: Container(
         height: 50,
         width: double.infinity,
