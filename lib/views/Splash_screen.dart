@@ -1,4 +1,4 @@
-import 'package:app/components/Login_form.dart';
+import 'package:app/views/Login_form.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
+        MaterialPageRoute(builder: (context) => LoginForm()),
         (route) => false,
       );
     });
