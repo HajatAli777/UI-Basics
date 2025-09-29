@@ -3,8 +3,9 @@ import 'package:app/utills/colors.dart';
 
 class ToldText extends StatelessWidget {
   final String title;
+  final String subTitle;
 
-  const ToldText({super.key, required this.title});
+  const ToldText({super.key, required this.title, required this.subTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +21,9 @@ class ToldText extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8), // add some spacing
-        const Text(
-          'Enter your credentials to login to your account',
+         Text(
+          subTitle,
+          
           style: TextStyle(
             color: AppColors.subtitleTextColor,
             fontSize: 15,
