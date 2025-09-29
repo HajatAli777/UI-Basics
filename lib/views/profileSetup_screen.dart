@@ -1,3 +1,4 @@
+import 'package:app/const/custom_textfield.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class ProfilesetupScreen extends StatefulWidget {
 }
 
 class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
+  final nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +77,10 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
               ],
               
               
-            )
+            ),
+            const SizedBox(height: 20,),
+            CustomTextField(label: 'Your Name', hint: 'Ali', controller: TextEditingController())
+            
 
           ],
           

@@ -56,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             subTitle: 'Enter your credentials to login to your account',
                             
                           ),
+                          
                           const SizedBox(height: 12),
                           CustomTextField(
                             label: "Email",
