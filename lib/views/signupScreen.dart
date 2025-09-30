@@ -54,21 +54,48 @@ class _SignupscreenState extends State<Signupscreen> {
                        subTitle: 'New to TripPani! Enter in your details to create your account',
 
                     ),
-                    CustomTextField(
+                                        
+
+Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.textFieldFillColor,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.subtitleTextColor),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                
+                                CustomTextField(
                       label: 'Full Name',
                       hint: 'Hajat Ali', 
                       controller: nameController,
                     ),
+                    Divider(
+                        color: AppColors.subtitleTextColor,
+                      ),
+
                     CustomTextField(
                       label: 'Email', 
                       hint: 'Hajat@e.com', 
                       controller: emailController
                       ),
-                    CustomTextField(
+                      Divider(
+                        color: AppColors.subtitleTextColor,
+                      ),
+                      CustomTextField(
                       label: 'Password', 
                       hint: '******', 
                       controller: passwordController
                       ),
+                               
+                              ]
+                            ),
+    ),
+                    
+                    
+                    // 
                     const SizedBox(height: 25,),
                     Row(
                       children: [

@@ -58,10 +58,26 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           
                           const SizedBox(height: 12),
+                          
+
+Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.textFieldFillColor,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.subtitleTextColor),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                
                           CustomTextField(
                             label: "Email",
                             hint: "Enter your email",
                             controller: emailController,
+                          ),
+                          Divider(
+                            color: AppColors.subtitleTextColor,
                           ),
                           CustomTextField(
                             label: "Password",
@@ -69,6 +85,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             controller: passwordController,
                             obscureText: true,
                           ),
+                                
+                              ]
+                            ),
+    ),
                           const SizedBox(height: 10),
                           Align(
                             alignment: Alignment.centerRight,

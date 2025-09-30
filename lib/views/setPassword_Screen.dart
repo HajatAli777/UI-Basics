@@ -50,10 +50,27 @@ class _SetpasswordScreenState extends State<SetpasswordScreen> {
                         title: 'Set New Password', 
                         subTitle: 'Enter your new Password to protect your \naccount'),
                         const SizedBox(height: 12,),
-                        CustomTextField(
+                        
+Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.textFieldFillColor,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.subtitleTextColor),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                       CustomTextField(
                           label: 'Password', 
                           hint: '*******', 
                           controller: passwordController),
+                                
+                            
+                              ]
+                            ),
+    ),
+                 
                           const SizedBox(height: 16,),
                           PrimaryButton(
                             buttontext: 'Set New Password', 

@@ -17,17 +17,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: AppColors.textFieldFillColor,
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: AppColors.subtitleTextColor),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
+    return Padding(
                                   padding: const EdgeInsets.only(
                                     left: 8,
                                     right: 8.0,
@@ -67,11 +57,8 @@ class CustomTextField extends StatelessWidget {
                                 
                                     ]
                                   )
-                                )
-                              ]
-                            ),
-    );
+                                );
+}
                                       
                            
   }
-}

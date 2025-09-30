@@ -53,10 +53,28 @@ class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
                           title: 'Password Recovery', 
                         subTitle: 'Enter your email so we can send you a 4-digit \ncode'),
                         const SizedBox(height: 12,),
+                        Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.textFieldFillColor,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.subtitleTextColor),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                
                         CustomTextField(
                           label: 'Email',
                          hint: 'hajay@mail.com', 
                          controller:emailController),
+                                
+                         
+                                
+                              ]
+                            ),
+    ),
+
                          const SizedBox(height: 20,),
                          PrimaryButton(buttontext: 'Send Code',
                           onTap: () { 

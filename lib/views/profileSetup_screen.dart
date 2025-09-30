@@ -21,7 +21,7 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.secondaryColor,
-        title: Image.asset('assets/Logo.png', height: 40),
+        title: Image.asset('assets/primeryLogo.png', height: 40, width: 90,),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
@@ -89,7 +89,7 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
             CustomTextField(label: 'D,O,B', hint: '02/23/2023', controller: dobController),
             const SizedBox(height: 90,),
             PrimaryButton(buttontext: 'Next', onTap: (){
-              
+
             })
             
 
