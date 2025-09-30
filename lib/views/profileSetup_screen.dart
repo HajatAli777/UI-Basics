@@ -1,4 +1,5 @@
 import 'package:app/const/custom_textfield.dart';
+import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,9 @@ class ProfilesetupScreen extends StatefulWidget {
 
 class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
   final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final phoneNumberController = TextEditingController();
+  final dobController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +83,14 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
               
             ),
             const SizedBox(height: 20,),
-            CustomTextField(label: 'Your Name', hint: 'Ali', controller: TextEditingController())
+            CustomTextField(label: 'Your Name', hint: 'Ali', controller: TextEditingController()),
+            CustomTextField(label: 'Email', hint: 'ali@email.com', controller: emailController),
+            CustomTextField(label: 'Phone Number', hint: '+12334334', controller: phoneNumberController),
+            CustomTextField(label: 'D,O,B', hint: '02/23/2023', controller: dobController),
+            const SizedBox(height: 90,),
+            PrimaryButton(buttontext: 'Next', onTap: (){
+              
+            })
             
 
           ],

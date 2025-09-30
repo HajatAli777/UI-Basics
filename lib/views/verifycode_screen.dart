@@ -32,7 +32,7 @@ class VerifycodeScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: 60),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 12,),
                     Line(),

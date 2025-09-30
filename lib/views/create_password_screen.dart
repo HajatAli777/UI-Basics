@@ -43,8 +43,9 @@ class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
                   child: Padding(
                     padding:const EdgeInsets.symmetric(horizontal: 16.0), 
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        
                         const SizedBox(height: 12,),
                         Line(),
                         const SizedBox(height: 16,),

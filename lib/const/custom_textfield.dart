@@ -18,41 +18,60 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: AppColors.textFieldFillColor,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.subtitleTextColor),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: TextStyle(
-                color: AppColors.toldTextColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            TextField(
-              controller: controller,
-              obscureText: obscureText,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: hint,
-                hintStyle: TextStyle(
-                  color: AppColors.subtitleTextColor,
-                  fontSize: 14,
-                ),
-                contentPadding: const EdgeInsets.symmetric(vertical: 12),
-              ),
-            ),
-          ],
-        ),
-      ),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.textFieldFillColor,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.subtitleTextColor),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 8,
+                                    right: 8.0,
+                                    top: 8,
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        label,
+                                        style: TextStyle(
+                                          color: AppColors.toldTextColor,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          
+                                        ),
+                                      ),
+                                      TextField(
+                                        controller: controller,
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: hint,
+                                          hintStyle: TextStyle(
+                                            color: AppColors.subtitleTextColor,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                          contentPadding: EdgeInsets.only(
+                                            top: 12,
+                                            bottom: 12,
+                                          ),
+                                        ),
+                                      ),
+                                    
+                                  
+                                
+                                    ]
+                                  )
+                                )
+                              ]
+                            ),
     );
+                                      
+                           
   }
 }
