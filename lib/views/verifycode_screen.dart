@@ -37,7 +37,7 @@ class VerifycodeScreen extends StatelessWidget {
                     const SizedBox(height: 12,),
                     Line(),
                     const SizedBox(height: 16,),
-                    ToldText(title: 'Verify Code', subTitle: 'Enter the 4 digit code to access your account'),
+                    ToldText(title: 'Verify Code', subTitle: 'Enter the 4 digit code to access your account',),
                     const SizedBox(height: 20,),
                     Row(
                       children: [

@@ -7,6 +7,7 @@ class AppColors{
   static const subtitleTextColor = Color(0xff999999);
   static const textFieldFillColor = Color(0xffF5F5F5);
   static const secondaryColor = Color(0xffFFFFFF);
+  static const C_color = Color(0xffF5F5F5);
 
   AppColors(secondaryColor);
 

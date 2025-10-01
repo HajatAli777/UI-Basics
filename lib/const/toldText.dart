@@ -5,7 +5,7 @@ class ToldText extends StatelessWidget {
   final String title;
   final String subTitle;
 
-  const ToldText({super.key, required this.title, required this.subTitle});
+  const ToldText({super.key, required this.title, required this.subTitle, });
 
   @override
   Widget build(BuildContext context) {

@@ -51,7 +51,7 @@ class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
                         const SizedBox(height: 16,),
                         ToldText(
                           title: 'Password Recovery', 
-                        subTitle: 'Enter your email so we can send you a 4-digit \ncode'),
+                        subTitle: 'Enter your email so we can send you a 4-digit \ncode',),
                         const SizedBox(height: 12,),
                         Container(
                             width: double.infinity,

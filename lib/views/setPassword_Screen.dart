@@ -48,7 +48,7 @@ class _SetpasswordScreenState extends State<SetpasswordScreen> {
                       const SizedBox(height: 16,),
                       ToldText(
                         title: 'Set New Password', 
-                        subTitle: 'Enter your new Password to protect your \naccount'),
+                        subTitle: 'Enter your new Password to protect your \naccount',),
                         const SizedBox(height: 12,),
                         
 Container(

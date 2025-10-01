@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(height: 16),
                           ToldText(
                             title: 'Login',
-                            subTitle: 'Enter your credentials to login to your account',
+                            subTitle: 'Enter your credentials to login to your account', 
                             
                           ),
                           

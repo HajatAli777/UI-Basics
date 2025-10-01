@@ -2,6 +2,7 @@ import 'package:app/const/custom_textfield.dart';
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/profileSetup2_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfilesetupScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
           children: [
             const SizedBox(height: 30,),
             ToldText(title: "Profile Setup", 
-            subTitle: 'Lets setup your profile first to you know better'),
+            subTitle: 'Lets setup your profile first to you know better',),
             const SizedBox(height: 20,),
             Row(
               children: [
@@ -83,14 +84,42 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
               
             ),
             const SizedBox(height: 20,),
+            Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.textFieldFillColor,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.subtitleTextColor),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                
             CustomTextField(label: 'Your Name', hint: 'Ali', controller: TextEditingController()),
+            Divider(
+              color: AppColors.subtitleTextColor,
+            ),
             CustomTextField(label: 'Email', hint: 'ali@email.com', controller: emailController),
+             Divider(
+              color: AppColors.subtitleTextColor,
+            ),
             CustomTextField(label: 'Phone Number', hint: '+12334334', controller: phoneNumberController),
+             Divider(
+              color: AppColors.subtitleTextColor,
+            ),
             CustomTextField(label: 'D,O,B', hint: '02/23/2023', controller: dobController),
-            const SizedBox(height: 90,),
-            PrimaryButton(buttontext: 'Next', onTap: (){
+            
+                               
+                      ]
+                      
+                    ),
+    ),
+    const SizedBox(height: 30,),
+    PrimaryButton(buttontext: 'Next', onTap: (){
+      Navigator.push(context,MaterialPageRoute(builder:(_)=> const Profilesetup2Screen()));
 
-            })
+    })
+ 
             
 
           ],
