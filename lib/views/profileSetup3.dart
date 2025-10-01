@@ -1,11 +1,12 @@
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
-import 'package:app/views/profileSetup3.dart';
+import 'package:app/views/profileSetup2_screen.dart';
+import 'package:app/views/profileSetup4.dart';
 import 'package:flutter/material.dart';
 
-class Profilesetup2Screen extends StatelessWidget {
-  const Profilesetup2Screen({super.key});
+class Profilesetup3 extends StatelessWidget {
+  const Profilesetup3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -83,11 +84,7 @@ class Profilesetup2Screen extends StatelessWidget {
                       color: AppColors.C_color,
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: Icon(
-                      Icons.camera_alt_outlined,
-                      size: 40,
-                      color: AppColors.subtitleTextColor,
-                    ),
+                    child: Image.asset('assets/person.png'),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -124,8 +121,7 @@ class Profilesetup2Screen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            child: Icon(Icons.person,
-                                size: 40, color: AppColors.secondaryColor),
+                            child: Image.asset('assets/person.png'),
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
@@ -134,8 +130,7 @@ class Profilesetup2Screen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                size: 35, color: AppColors.secondaryColor),
+                            child: Image.asset('assets/person.png'),
                             width: 80,
                             height: 80,
                             decoration: BoxDecoration(
@@ -144,8 +139,7 @@ class Profilesetup2Screen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                size: 30, color: AppColors.secondaryColor),
+                            child: Image.asset('assets/person.png'),
                             width: 60,
                             height: 60,
                             decoration: BoxDecoration(
@@ -154,8 +148,7 @@ class Profilesetup2Screen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                color: AppColors.secondaryColor),
+                            child: Image.asset('assets/person.png'),
                             width: 40,
                             height: 40,
                             decoration: BoxDecoration(
@@ -164,8 +157,7 @@ class Profilesetup2Screen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                size: 20, color: AppColors.secondaryColor),
+                            child: Image.asset('assets/person.png'),
                             width: 30,
                             height: 30,
                             decoration: BoxDecoration(
@@ -182,7 +174,7 @@ class Profilesetup2Screen extends StatelessWidget {
                 PrimaryButton(
                   buttontext: 'Next',
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>Profilesetup3()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Profilesetup4()));
                     // Navigation or logic
                   },
                 ),
@@ -191,10 +183,16 @@ class Profilesetup2Screen extends StatelessWidget {
 
                 }, 
                 child: Center(
-                  child: Text('Back', style: TextStyle(
-                    color: AppColors.subtitleTextColor,
-                    
-                  ),),
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => Profilesetup2Screen()));
+                    },
+                    child: Text('Back', style: TextStyle(
+                      color: AppColors.subtitleTextColor,
+                      
+                    ),
+                    ),
+                  ),
                 ), 
                 )
                 
@@ -204,5 +202,7 @@ class Profilesetup2Screen extends StatelessWidget {
         ),
       ),
     );
+
+    ;
   }
 }
