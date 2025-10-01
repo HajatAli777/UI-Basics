@@ -12,9 +12,13 @@ class Profilesetup3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset("assets/Logo.png", height: 30, width: 80),
-        centerTitle: true,
-      ),
+  backgroundColor: Colors.transparent, // Remove background color
+  elevation: 0, // Remove AppBar shadow
+  centerTitle: true,
+  automaticallyImplyLeading: false, // Remove back button
+  title: Image.asset("assets/Logo.png", height: 30, width: 80),
+),
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -53,7 +57,7 @@ class Profilesetup3 extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          '1',
+                          '2',
                           style: TextStyle(color: AppColors.secondaryColor),
                         ),
                       ),
@@ -68,7 +72,7 @@ class Profilesetup3 extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          '1',
+                          '3',
                           style: TextStyle(color: AppColors.secondaryColor),
                         ),
                       ),
