@@ -6,19 +6,59 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            // backgroundColor: AppColors.primaryColor,
-            leading: Image.asset('assets/primeryLogo.png',width: 100,height: 30,),
-            actions: [
-              IconButton(onPressed: (){}, icon: Icon(Icons.notifications))
-            ],
-          ),
+    return Scaffold(
+      body: SafeArea(child: 
+      Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset('assets/primeryLogo.png', width: 100,),
+                Container(
+                  
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.subtitleTextColor.withValues(alpha: 0.2),
+                  ),
+                  child: Icon(Icons.notification_important_outlined),
+                )
+              ],
+            ),
+            const SizedBox(height: 20,),
+            Container(
+              height: 56,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(color: AppColors.subtitleTextColor.withValues(alpha: 0.4))
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.search, size: 30,),
+                    hintText: 'Search',
+                    suffixIcon: Icon(Icons.ac_unit_sharp),
+                    hintStyle: TextStyle(color: AppColors.subtitleTextColor)
+                  ),
+                  
+                ),
+              ),
+              
+            )
+
+            
+          ],
         ),
+      )
       ),
+      
+      
     );
   }
 }
