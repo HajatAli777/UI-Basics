@@ -1,9 +1,15 @@
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  List myItems =["assets/apartment.png", "assets/homes.png", "assets/villas.png", "assets/bungalows"]; 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,14 +49,39 @@ class Homepage extends StatelessWidget {
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.search, size: 30,),
                     hintText: 'Search',
-                    suffixIcon: Icon(Icons.ac_unit_sharp),
-                    hintStyle: TextStyle(color: AppColors.subtitleTextColor)
+                    hintStyle: TextStyle(color: AppColors.subtitleTextColor),
+                    suffixIcon: Image.asset(
+                      'assets/icon.png',
+                        width: 24,
+                        height: 24,
+                              ),
+
                   ),
                   
                 ),
               ),
               
-            )
+            ),
+            const SizedBox(height: 12,),
+            SizedBox(
+                height: 100,
+                width: double.infinity,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: myItems.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        child: Image.asset(myItems[index]),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            
 
             
           ],
