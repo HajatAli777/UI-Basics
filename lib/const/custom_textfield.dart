@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool obscureText;
 
-   CustomTextField({
+   const CustomTextField({
     super.key,
     required this.label,
     required this.hint,
@@ -19,9 +19,9 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
                                   padding: const EdgeInsets.only(
-                                    left: 8,
-                                    right: 8.0,
-                                    top: 8,
+                                    left: 5,
+                                    right: 5.0,
+                                    top: 5,
                                   ),
                                   child: Column(
                                     crossAxisAlignment:

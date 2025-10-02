@@ -3,6 +3,7 @@ import 'package:app/const/line.dart';
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/create_password_screen.dart';
 import 'package:flutter/material.dart';
 
 class SetpasswordScreen extends StatefulWidget {
@@ -75,6 +76,7 @@ Container(
                           PrimaryButton(
                             buttontext: 'Set New Password', 
                             onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (_) => CreatePasswordScreen()));
 
                           }),
                     ],

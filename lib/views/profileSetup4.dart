@@ -2,6 +2,8 @@ import 'package:app/const/custom_textfield.dart';
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/homePage.dart';
+import 'package:app/views/profileSetup3.dart';
 import 'package:flutter/material.dart';
 
 class Profilesetup4 extends StatefulWidget {
@@ -92,9 +94,10 @@ class _Profilesetup4State extends State<Profilesetup4> {
                       height: 300,
                       decoration: BoxDecoration(
                         color: AppColors.C_color,
+                        borderRadius: BorderRadius.circular(20)
                         
                       ),
-                      child: Image.asset('assets/map.png'),
+                      child: Image.asset('assets/map.png',fit: BoxFit.cover,),
                     ),
                   ),
                   const SizedBox(height: 20,),
@@ -120,8 +123,7 @@ class _Profilesetup4State extends State<Profilesetup4> {
     PrimaryButton(
                   buttontext: 'Next',
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Profilesetup4()));
-                    // Navigation or logic
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => Homepage()));
                   },
                 ),
                 
@@ -130,9 +132,9 @@ class _Profilesetup4State extends State<Profilesetup4> {
                 }, 
                 child: Center(
                   child: InkWell(
-                    // onTap: (){
-                    //   Navigator.push(context, MaterialPageRoute(builder: (_) => Profilesetup2Screen()));
-                    // },
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => Profilesetup3()));
+                    },
                     child: Text('Back', style: TextStyle(
                       color: AppColors.subtitleTextColor,
                       

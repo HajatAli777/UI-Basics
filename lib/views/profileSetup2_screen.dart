@@ -1,7 +1,9 @@
+
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
 import 'package:app/views/profileSetup3.dart';
+import 'package:app/views/profileSetup_screen.dart';
 import 'package:flutter/material.dart';
 
 class Profilesetup2Screen extends StatelessWidget {
@@ -128,54 +130,54 @@ class Profilesetup2Screen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            child: Icon(Icons.person,
-                                size: 40, color: AppColors.secondaryColor),
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Icon(Icons.person,
+                                size: 40, color: AppColors.secondaryColor),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                size: 35, color: AppColors.secondaryColor),
                             width: 80,
                             height: 80,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Icon(Icons.person,
+                                size: 35, color: AppColors.secondaryColor),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                size: 30, color: AppColors.secondaryColor),
                             width: 60,
                             height: 60,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Icon(Icons.person,
+                                size: 30, color: AppColors.secondaryColor),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                color: AppColors.secondaryColor),
                             width: 40,
                             height: 40,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Icon(Icons.person,
+                                color: AppColors.secondaryColor),
                           ),
                           Container(
-                            child: Icon(Icons.person,
-                                size: 20, color: AppColors.secondaryColor),
                             width: 30,
                             height: 30,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Icon(Icons.person,
+                                size: 20, color: AppColors.secondaryColor),
                           ),
                         ],
                       ),
@@ -192,7 +194,8 @@ class Profilesetup2Screen extends StatelessWidget {
                 ),
                 
                 TextButton(onPressed: (){
-
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>ProfilesetupScreen()));
+                
                 }, 
                 child: Center(
                   child: Text('Back', style: TextStyle(

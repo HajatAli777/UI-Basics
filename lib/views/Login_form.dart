@@ -1,3 +1,4 @@
+
 import 'package:app/const/line.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/views/profileSetup_screen.dart';
@@ -62,6 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 Container(
                             width: double.infinity,
+                           
                             decoration: BoxDecoration(
                               color: AppColors.textFieldFillColor,
                               borderRadius: BorderRadius.circular(8),

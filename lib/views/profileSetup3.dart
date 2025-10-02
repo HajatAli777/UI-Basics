@@ -125,49 +125,49 @@ class Profilesetup3 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            child: Image.asset('assets/person.png'),
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Image.asset('assets/person.png'),
                           ),
                           Container(
-                            child: Image.asset('assets/person.png'),
                             width: 80,
                             height: 80,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Image.asset('assets/person.png'),
                           ),
                           Container(
-                            child: Image.asset('assets/person.png'),
                             width: 60,
                             height: 60,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Image.asset('assets/person.png'),
                           ),
                           Container(
-                            child: Image.asset('assets/person.png'),
                             width: 40,
                             height: 40,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Image.asset('assets/person.png'),
                           ),
                           Container(
-                            child: Image.asset('assets/person.png'),
                             width: 30,
                             height: 30,
                             decoration: BoxDecoration(
                               color: AppColors.subtitleTextColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
+                            child: Image.asset('assets/person.png'),
                           ),
                         ],
                       ),

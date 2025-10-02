@@ -40,11 +40,11 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
                 Container(
                   height: 25,
                   width: 25,
-                  child: Center(child: Text('1', style: TextStyle(color: AppColors.secondaryColor),)),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: AppColors.primaryColor,
                   ),
+                  child: Center(child: Text('1', style: TextStyle(color: AppColors.secondaryColor),)),
                   
                 ),
                 const SizedBox(width: 8,),
@@ -57,11 +57,11 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
                 Container(
                    height: 25,
                   width: 25,
-                  child: Center(child: Text('2', style: TextStyle(color: AppColors.secondaryColor),)),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: AppColors.subtitleTextColor,
                   ),
+                  child: Center(child: Text('2', style: TextStyle(color: AppColors.secondaryColor),)),
                 ),
                 const SizedBox(width: 8,),
                 Expanded(
@@ -73,11 +73,11 @@ class _ProfilesetupScreenState extends State<ProfilesetupScreen> {
                 Container(
                    height: 25,
                   width: 25,
-                  child: Center(child: Text('3', style: TextStyle(color: AppColors.secondaryColor),)),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: AppColors.subtitleTextColor,
                   ),
+                  child: Center(child: Text('3', style: TextStyle(color: AppColors.secondaryColor),)),
                 )
               ],
               
