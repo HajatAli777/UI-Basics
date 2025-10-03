@@ -9,7 +9,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  List myItems =["assets/apartment.png", "assets/homes.png", "assets/villas.png", "assets/bungalows"]; 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,34 +62,26 @@ class _HomepageState extends State<Homepage> {
               ),
               
             ),
-            const SizedBox(height: 12,),
+            const SizedBox(height: 15,),
             SizedBox(
-                height: 100,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: myItems.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: Container(
-                        height: 50,
-                        width: 50,
-                        child: Image.asset(myItems[index]),
-                      ),
-                    );
-                  },
-                ),
+              height: 80,
+              width: double.infinity,
+              child: Row(
+                children: [
+                  Image.asset('assets/apartment.png'),
+                  const SizedBox(width: 8,),
+                  Image.asset('assets/homes.png'),
+                  const SizedBox(width: 8,),
+                  Image.asset('assets/villas.png'),
+                  const SizedBox(width: 8,),
+                  Image.asset('assets/bungalows.png')
+                ],
               ),
-            
-
-            
+            )  
           ],
         ),
       )
-      ),
-      
-      
+      ),   
     );
   }
 }
