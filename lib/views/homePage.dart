@@ -1,4 +1,5 @@
 import 'package:app/utills/colors.dart';
+import 'package:app/views/bottom_navbar/navbar.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -77,7 +78,8 @@ class _HomepageState extends State<Homepage> {
                   Image.asset('assets/bungalows.png')
                 ],
               ),
-            )  
+            ),
+            NavBar(),
           ],
         ),
       )
