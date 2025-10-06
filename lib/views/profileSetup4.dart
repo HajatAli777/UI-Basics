@@ -2,6 +2,7 @@ import 'package:app/const/custom_textfield.dart';
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/bottom_navbar/navbar.dart';
 import 'package:app/views/homePage.dart';
 import 'package:app/views/profileSetup3.dart';
 import 'package:flutter/material.dart';
@@ -123,7 +124,7 @@ class _Profilesetup4State extends State<Profilesetup4> {
     PrimaryButton(
                   buttontext: 'Next',
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => Homepage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => NavBar()));
                   },
                 ),
                 

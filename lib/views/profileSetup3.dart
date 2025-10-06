@@ -207,6 +207,6 @@ class Profilesetup3 extends StatelessWidget {
       ),
     );
 
-    ;
+    
   }
 }
