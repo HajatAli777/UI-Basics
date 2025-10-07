@@ -19,7 +19,6 @@ class _HomepageState extends State<Homepage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // Top Row: Logo and Notification
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
