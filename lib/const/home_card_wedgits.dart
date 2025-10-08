@@ -15,109 +15,251 @@ class HomeCardWidget extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadiusGeometry.circular(12),
       child: Container(
-        height: 400,
+        height: 700,
         width: double.infinity,
-        decoration: BoxDecoration(color: AppColors.secondaryColor),
+        
+        decoration: BoxDecoration(color: AppColors.secondaryColor, 
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Container(
-                height: 200,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      "https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXBhcnRtZW50JTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D",
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        "https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXBhcnRtZW50JTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D",
+                      ),
+                      fit: BoxFit.fill,
                     ),
-                    fit: BoxFit.fill,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            color: AppColors.subtitleTextColor.withValues(
+                              alpha: 0.2,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: Text('Most Recommended'),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 30,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: AppColors.subtitleTextColor.withValues(
-                            alpha: 0.2,
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Text('Hamilton Studio Appartment', style: TextStyle(color: AppColors.toldTextColor, fontWeight: FontWeight.bold),),
+                    RatingBar.builder(
+                      initialRating: 5,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      tapOnlyMode: true,
+                      updateOnDrag: false,
+                      ignoreGestures: true,
+                      itemCount: 5,
+                      itemSize: 24,
+                      itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                      itemBuilder: (context, _) =>
+                          Icon(Icons.star, color: AppColors.primaryColor),
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
+                    ),
+                    Text("(20)", style: TextStyle(color: AppColors.subtitleTextColor)),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "10 km away from your location",
+                    style: TextStyle(color: AppColors.subtitleTextColor),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 40,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: AppColors.primaryColor,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "\$10 a night",
+                          style: TextStyle(color: AppColors.secondaryColor),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.subtitleTextColor.withValues(alpha: 0.2),
+                      ),
+                      child: Center(child: Icon(Icons.favorite_border)),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  width: double.infinity,
+                  height: 400,
+                  // color: AppColors.C_color,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                      image: NetworkImage(
+                        "https://plus.unsplash.com/premium_photo-1661964402307-02267d1423f5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww",
+                      ),
+                      fit: BoxFit.fill,
+                         
+                        )
+                           
+                            
                           ),
-                          borderRadius: BorderRadius.circular(20),
+
+                      
                         ),
-                        child: Center(
-                          child: Text('Most Recommended'),
+                        const SizedBox(height: 10,),
+
+                        Row(
+                          children: [
+                            Text('Befar Apartment', style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w300,
+                            ),),
+                            const SizedBox(width:120),
+                            RatingBar.builder(
+                      initialRating: 5,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      tapOnlyMode: true,
+                      updateOnDrag: false,
+                      ignoreGestures: true,
+                      itemCount: 5,
+                      itemSize: 24,
+                      itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                      itemBuilder: (context, _) =>
+                          Icon(Icons.star, color: AppColors.primaryColor),
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
+                    ),
+                    Text('(20)', style: TextStyle(
+                      color: AppColors.subtitleTextColor.withValues(alpha: 0.8),
+                    ),),
+
+
+                          ],
                         ),
+                        const SizedBox(height: 10),
+                         Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "10 km away from your location",
+                    style: TextStyle(color: AppColors.subtitleTextColor,
+                    fontSize: 20,
+                    
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor, 
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text('\$12 a night', style: TextStyle(
+                          color: AppColors.secondaryColor,
+                        
+                        ),),
+                      ),
+                    ),
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: AppColors.subtitleTextColor.withValues(alpha: 0.2)
+                      ),
+                      child: Icon(Icons.favorite_border_rounded),
+                    )
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Container(
+                  width: 100,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child:Row(
+                    children: [
+                      const SizedBox(width: 14,),
+                      Icon(Icons.map_outlined, color: AppColors.secondaryColor),
+                      Center(
+                        child: Text('map', style: TextStyle(
+                          color: AppColors.secondaryColor,
+                          fontSize: 20,
+                        ),),
                       ),
                     ],
                   ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Text('Hamilton Studio Appartment', style: TextStyle(color: AppColors.toldTextColor, fontWeight: FontWeight.bold),),
-                  RatingBar.builder(
-                    initialRating: 5,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    tapOnlyMode: true,
-                    updateOnDrag: false,
-                    ignoreGestures: true,
-                    itemCount: 5,
-                    itemSize: 24,
-                    itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                    itemBuilder: (context, _) =>
-                        Icon(Icons.star, color: AppColors.primaryColor),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                  ),
-                  Text("(20)", style: TextStyle(color: AppColors.subtitleTextColor)),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "10 km away from your location",
-                  style: TextStyle(color: AppColors.subtitleTextColor),
-                ),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 40,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: AppColors.primaryColor,
-                    ),
-                    child: Center(
-                      child: Text(
-                        "\$10 a night",
-                        style: TextStyle(color: AppColors.secondaryColor),
-                      ),
+                  
+                  
+                )
+
+
+
+
+                        
+                        
+                        
+                        
+                      ],
                     ),
                   ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.subtitleTextColor.withValues(alpha: 0.2),
-                    ),
-                    child: Center(child: Icon(Icons.favorite_border)),
-                  ),
-                ],
-              ),
-            ],
+            
+                )
+            
+              ],
+            ),
           ),
         ),
       ),
