@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 
 
 class HomeCardWidget extends StatelessWidget {
-  const HomeCardWidget({super.key});
+  final String imageUrl;
+  final String title;
+  final double rating;
+  final int reviews;
+  final int price;
+
+  const HomeCardWidget({super.key, required this.imageUrl, required this.title, required this.rating, required this.reviews, required this.price});
 
   @override
   Widget build(BuildContext context) {
