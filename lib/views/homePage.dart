@@ -1,5 +1,6 @@
 import 'package:app/const/home_card_wedgits.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/filterScreen.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -114,10 +115,15 @@ class _HomepageState extends State<Homepage> {
                         prefixIcon: const Icon(Icons.search, size: 30),
                         hintText: 'Search',
                         hintStyle: TextStyle(color: AppColors.subtitleTextColor),
-                        suffixIcon: Image.asset(
-                          'assets/icon.png',
-                          width: 24,
-                          height: 24,
+                        suffixIcon: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (c)=>const Filterscreen()));
+                          },
+                          child: Image.asset(
+                            'assets/icon.png',
+                            width: 24,
+                            height: 24,
+                          ),
                         ),
                       ),
                     ),
