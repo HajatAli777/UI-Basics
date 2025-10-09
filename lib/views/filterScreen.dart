@@ -1,4 +1,4 @@
-import 'package:app/const/filterScreenCard.dart';
+
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -10,49 +10,67 @@ class Filterscreen extends StatefulWidget {
 }
 
 class _FilterscreenState extends State<Filterscreen> {
-  List  filterData= [{
-    'title': 'Appartment',
-    'imageUrl': 'assets/apartment.png'
-
-
-  }]; 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 16.0, right: 16),
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 50,
-              color: Colors.transparent,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 50,
+                width: double.infinity,
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset('assets/primeryLogo.png'),
+                    Center(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColors.subtitleTextColor.withValues(alpha: 0.6),
+                      
+                        ),
+                        child: const Icon(Icons.notifications),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+             
+              const SizedBox(height: 12,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('assets/primeryLogo.png', height: 40,),
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.subtitleTextColor.withValues(alpha: 0.2),
-                    ),
-                    child: Center(
-                      child: Icon(Icons.notifications_outlined),
-                    ),
-                  )
+                  Text('Looking for?', style: TextStyle(
+                    color: AppColors.toldTextColor,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600
+                  ),
+                  ),
+                  const SizedBox(height: 9,),
+                  Text('Which of these suits you for this stay', style: TextStyle(
+                    color: AppColors.subtitleTextColor.withValues(alpha: 0.6),
+                    fontSize: 16,
+
+                  ),)
                 ],
               ),
               
-        
-            ),
-            const SizedBox(height: 20,),
-            Filterscreencard(title: filterData[0]['title'], imageUrl: filterData[0]['imageUrl'])
+              
 
-          ],
-        ),
-      )
+            ],
+          ),
+        )
+      ),
+
+
+
     );
   }
 }
