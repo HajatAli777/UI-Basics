@@ -18,6 +18,7 @@ class _HomepageState extends State<Homepage> {
       'rating': 4.9,
       'reviews': 400,
       'price': 100,
+      'distance': 12,
     },
     {
       'imageUrl':
@@ -26,6 +27,7 @@ class _HomepageState extends State<Homepage> {
       'rating': 3.6,
       'reviews': 370,
       'price': 76,
+      'distance': 34,
     },
     {
       'imageUrl':
@@ -34,6 +36,7 @@ class _HomepageState extends State<Homepage> {
       'rating': 4.0,
       'reviews': 330,
       'price': 70,
+      'distance': 20,
     },
     {
       'imageUrl':
@@ -42,6 +45,7 @@ class _HomepageState extends State<Homepage> {
       'rating': 3.4,
       'reviews': 300,
       'price': 43,
+      'distance': 11,
     },
     {
       'imageUrl':
@@ -50,6 +54,7 @@ class _HomepageState extends State<Homepage> {
       'rating': 4.6,
       'reviews': 450,
       'price': 50,
+      'distance': 8
     },
     {
       'imageUrl':
@@ -58,6 +63,7 @@ class _HomepageState extends State<Homepage> {
       'rating': 5.0,
       'reviews': 1200,
       'price': 120,
+      'distance': 5
     },
   ];
 
@@ -148,6 +154,7 @@ class _HomepageState extends State<Homepage> {
                       rating: cardListData['rating'].toDouble(),
                       reviews: cardListData['reviews'],
                       price: cardListData['price'],
+                      distance: cardListData['distance'],
                     );
                   },
                 ),

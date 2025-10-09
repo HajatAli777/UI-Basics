@@ -9,6 +9,7 @@ class HomeCardWidget extends StatelessWidget {
   final double rating;
   final int reviews;
   final int price;
+  final int distance;
 
   const HomeCardWidget({
     super.key,
@@ -17,6 +18,7 @@ class HomeCardWidget extends StatelessWidget {
     required this.rating,
     required this.reviews,
     required this.price,
+    required this.distance,
   });
 
   @override
@@ -106,11 +108,11 @@ class HomeCardWidget extends StatelessWidget {
               const SizedBox(height: 16),
               // Distance
               Text(
-                "10 km away from your location",
+                "${distance} km away from your location",
                 style: TextStyle(color: AppColors.subtitleTextColor),
               ),
               const SizedBox(height: 16),
-              // Price and Favorite Icon
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
