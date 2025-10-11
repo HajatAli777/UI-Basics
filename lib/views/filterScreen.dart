@@ -1,4 +1,5 @@
 
+import 'package:app/const/filterScreenCard.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,24 @@ class Filterscreen extends StatefulWidget {
 }
 
 class _FilterscreenState extends State<Filterscreen> {
+  List cardData = [
+    {
+      'title': 'Apartment',
+      'imageUrl': 'assets/apartment.png'
+    },
+    {
+      'title': 'Homes',
+      'imageUrl': 'assets/homes.png'
+    },
+    {
+      'title': 'Villas',
+      'imageUrl': 'assets/villas.png'
+    },
+    {
+      'title': 'Bungalows',
+      'imageUrl': 'assets/bungalows.png'
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +79,26 @@ class _FilterscreenState extends State<Filterscreen> {
 
                   ),)
                 ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+                child: GridView.builder(
+                  itemCount: cardData.length,
+                  padding: EdgeInsets.all(8),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 12),
+                    
+                    itemBuilder: (context, index){
+                      var Cards = cardData[index];
+                      return Filterscreencard(
+                        title: cardData[index]
+                        ['title'], imageUrl: 
+                        cardData[index]['imageUrl']
+                        );
+                    },
+                  ),
               ),
               
               

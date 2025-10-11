@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 class Filterscreencard extends StatelessWidget {
   final String title;
   final String imageUrl;
-  const Filterscreencard({super.key, required this.title, required this.imageUrl});
+  const Filterscreencard(
+    {
+    super.key, required this.title, 
+  required this.imageUrl
+  }
+  );
 
   @override
   Widget build(BuildContext context) {
