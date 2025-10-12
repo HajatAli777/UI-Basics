@@ -104,6 +104,7 @@ class _FilterscreenState extends State<Filterscreen> {
                   
               ),
               PrimaryButton(buttontext: 'Next', onTap: (){
+                print('tab next');
 
               })
               
