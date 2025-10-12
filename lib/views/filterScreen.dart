@@ -1,5 +1,6 @@
 
 import 'package:app/const/filterScreenCard.dart';
+import 'package:app/const/primarybutton.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -82,12 +83,13 @@ class _FilterscreenState extends State<Filterscreen> {
               ),
               SizedBox(
                 
-                height: MediaQuery.of(context).size.height * 0.6,
+                height: 500,
                 child: GridView.builder(
                   itemCount: cardData.length,
                   padding: EdgeInsets.all(8),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
+                    childAspectRatio: 1,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 22),
                     
@@ -99,7 +101,11 @@ class _FilterscreenState extends State<Filterscreen> {
                         );
                     },
                   ),
+                  
               ),
+              PrimaryButton(buttontext: 'Next', onTap: (){
+
+              })
               
               
 
