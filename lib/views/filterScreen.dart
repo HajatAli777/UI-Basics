@@ -13,19 +13,19 @@ class Filterscreen extends StatefulWidget {
 class _FilterscreenState extends State<Filterscreen> {
   List cardData = [
     {
-      'title': 'Apartment',
+      
       'imageUrl': 'assets/apartment.png'
     },
     {
-      'title': 'Homes',
+      
       'imageUrl': 'assets/homes.png'
     },
     {
-      'title': 'Villas',
+      
       'imageUrl': 'assets/villas.png'
     },
     {
-      'title': 'Bungalows',
+      
       'imageUrl': 'assets/bungalows.png'
     }
   ];
@@ -81,20 +81,20 @@ class _FilterscreenState extends State<Filterscreen> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.3,
+                
+                height: MediaQuery.of(context).size.height * 0.6,
                 child: GridView.builder(
                   itemCount: cardData.length,
                   padding: EdgeInsets.all(8),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 12),
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 22),
                     
                     itemBuilder: (context, index){
                       var Cards = cardData[index];
                       return Filterscreencard(
-                        title: cardData[index]
-                        ['title'], imageUrl: 
+                         imageUrl: 
                         cardData[index]['imageUrl']
                         );
                     },
