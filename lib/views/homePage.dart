@@ -145,6 +145,7 @@ class _HomepageState extends State<Homepage> {
                       Image.asset('assets/bungalows.png'),
                     ],
                   ),
+                  
                 ),
                 const SizedBox(height: 20),
                 // List of Cards
