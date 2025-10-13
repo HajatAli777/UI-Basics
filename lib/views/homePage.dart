@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:app/const/home_card_wedgits.dart';
 import 'package:app/utills/colors.dart';
 import 'package:app/views/filterScreen.dart';
@@ -67,8 +69,36 @@ class _HomepageState extends State<Homepage> {
       'distance': 5
     },
   ];
+  List originalData = [];
+  
 
   @override
+  void initState(){
+    originalData = List.from(cardList);
+    super.initState();
+  }
+  void search(String query) {
+    if (query.isEmpty) {
+      initState(){
+        setState(() {
+          
+          cardList = List.from(originalData);
+        });
+        return;
+      }
+      setState(() {
+        
+        cardList = originalData.where((data){
+        
+          final title = data['title'].toString().toLowerCase();
+          final input = query.toLowerCase();
+          
+      })
+        .toList();
+
+      });
+    }
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -145,7 +175,7 @@ class _HomepageState extends State<Homepage> {
                       Image.asset('assets/bungalows.png'),
                     ],
                   ),
-                  
+
                 ),
                 const SizedBox(height: 20),
                 // List of Cards
