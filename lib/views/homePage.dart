@@ -1,4 +1,4 @@
-import 'dart:ffi';
+
 
 import 'package:app/const/home_card_wedgits.dart';
 import 'package:app/utills/colors.dart';
@@ -68,37 +68,54 @@ class _HomepageState extends State<Homepage> {
       'price': 120,
       'distance': 5
     },
+    {
+      'imageUrl':'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hotels.com%2Fho3399343552%2Framada-resort-by-wyndham-gilgit%2F&psig=AOvVaw3WQYWKyGzyURdX2TPKNws7&ust=1760459970218000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMCMgc3OoZADFQAAAAAdAAAAABAE',
+      'title': 'Ramada Resort',
+      'rating': 4.8,
+      'reviews': 230,
+      'price': 150,
+      'distance': 20
+    },
+    {
+      
+      'imageUrl':'https://images.trvl-media.com/lodging/4000000/3810000/3800100/3800095/c7059c16.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+      'title': 'Sarena Hotel',
+      'rating': 4.9,
+      'reviews': 290,
+      'price': 130,
+      'distance': 60
+    },
+    {
+      
+      'imageUrl':'https://tripako.com/wp-content/uploads/2021/01/Rupal20Inn202-67-1473173471',
+      'title': 'Rupal Inn',
+      'rating': 4.1,
+      'reviews': 210,
+      'price': 60,
+      'distance': 30
+    }
   ];
-  List originalData = [];
-  
-
+  List cardListData = [];
   @override
   void initState(){
-    originalData = List.from(cardList);
+    cardListData = List.from(cardList);
     super.initState();
   }
-  void search(String query) {
-    if (query.isEmpty) {
-      initState(){
-        setState(() {
-          
-          cardList = List.from(originalData);
-        });
-        return;
-      }
+  void search(String query){
+    if (query.isEmpty){
       setState(() {
-        
-        cardList = originalData.where((data){
-        
-          final title = data['title'].toString().toLowerCase();
-          final input = query.toLowerCase();
-          
-      })
-        .toList();
-
+        cardList = List.from(cardListData);
       });
+      return;
     }
+    setState(() {
+      cardList = cardListData.where((data) {
+        final title = data['title'].toString().toLowerCase();
+        return title.startsWith(query.toLowerCase());
+      }).toList();
+    });
   }
+  
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -140,6 +157,9 @@ class _HomepageState extends State<Homepage> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      onChanged: (value) {
+                        search(value);
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         prefixIcon: const Icon(Icons.search, size: 30),
@@ -195,6 +215,16 @@ class _HomepageState extends State<Homepage> {
                     );
                   },
                 ),
+                Container(
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text('can you do?'),
+                      )
+                    ],
+                  ),
+                )
+                
               ],
             ),
           ),
