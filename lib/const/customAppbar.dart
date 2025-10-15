@@ -8,25 +8,32 @@ class Customappbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        InkWell(
-          onTap: onTap,
-          child: Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.subtitleTextColor.withValues(alpha: 0.2)
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        children: [
+          InkWell(
+            onTap: onTap,
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.subtitleTextColor.withValues(alpha: 0.2)
+              ),
+              child: Icon(Icons.arrow_back_ios_new_sharp),
             ),
-            child: Icon(Icons.arrow_back_ios_new_sharp),
+            
           ),
-          
-        ),
-        const SizedBox(width: 10,),
-        Text(title),
-
-      ],
+          const SizedBox(width: 18,),
+          Text(title, style: TextStyle(
+            color: AppColors.toldTextColor,
+            fontSize: 24,
+            fontWeight: FontWeight.bold
+          ),),
+      
+        ],
+      ),
     );
   }
 }

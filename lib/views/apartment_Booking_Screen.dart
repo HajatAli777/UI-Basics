@@ -2,32 +2,30 @@ import 'package:app/const/customAppbar.dart';
 import 'package:flutter/material.dart';
 
 class ApartmentBookingScreen extends StatelessWidget {
-  final Map<String, dynamic> data;
+  final Map<String, dynamic> cardItem;
   final String? err;
-  const ApartmentBookingScreen({super.key, required this.data, required this.err});
+  const ApartmentBookingScreen({super.key, required this.cardItem, required this.err});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Column(
+      body: SafeArea(child: 
+      Column(
         children: [
-          Padding(padding: EdgeInsets.all(16),
-          child: Customappbar(onTap: () {
+          Customappbar(
+            onTap: () {
+              Navigator.pop(context);
+            }, 
             
-          },
-          title: data['title'],
-          )
+            title: cardItem['title'],
           ),
-          const SizedBox(height: 12,),
-          Image.network(data["image"]),
-          Row(
-            children: [
-              Text(data['accodimation'] + 'Guest')
-            ],
-          )
-
+          const SizedBox(height: 12),
+          Image.network(cardItem['image']),
+          
         ],
-      )),
+      )
+      ),
+      
     );
   }
 }
