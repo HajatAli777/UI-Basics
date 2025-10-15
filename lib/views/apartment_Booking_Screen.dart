@@ -16,7 +16,8 @@ class ApartmentBookingScreen extends StatelessWidget {
           },
           title: 'rere',
           )
-          )
+          ),
+          
         ],
       )),
     );
