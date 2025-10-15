@@ -10,6 +10,7 @@ class HomeCardWidget extends StatelessWidget {
   final int reviews;
   final int price;
   final int distance;
+  final VoidCallback onTap;
 
   const HomeCardWidget({
     super.key,
@@ -19,6 +20,7 @@ class HomeCardWidget extends StatelessWidget {
     required this.reviews,
     required this.price,
     required this.distance,
+    required this.onTap
   });
 
   @override

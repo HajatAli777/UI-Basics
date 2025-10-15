@@ -1,5 +1,4 @@
 import 'package:app/const/customAppbar.dart';
-import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
 class ApartmentBookingScreen extends StatelessWidget {
@@ -23,7 +22,7 @@ class ApartmentBookingScreen extends StatelessWidget {
           Image.network(data["image"]),
           Row(
             children: [
-              Text(data['hello'] + 'Guest')
+              Text(data['accodimation'] + 'Guest')
             ],
           )
 
