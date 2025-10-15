@@ -2,6 +2,7 @@
 
 import 'package:app/const/home_card_wedgits.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/apartment_Booking_Screen.dart';
 import 'package:app/views/filterScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -205,13 +206,19 @@ class _HomepageState extends State<Homepage> {
                   itemCount: cardList.length,
                   itemBuilder: (context, index) {
                     var cardListData = cardList[index];
-                    return HomeCardWidget(
-                      imageUrl: cardListData['imageUrl'],
-                      title: cardListData['title'],
-                      rating: cardListData['rating'].toDouble(),
-                      reviews: cardListData['reviews'],
-                      price: cardListData['price'],
-                      distance: cardListData['distance'],
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (c)=>ApartmentBookingScreen(data: cardListData, err: 'dfd',)));
+                        
+                      },
+                      child: HomeCardWidget(
+                        imageUrl: cardListData['imageUrl'],
+                        title: cardListData['title'],
+                        rating: cardListData['rating'].toDouble(),
+                        reviews: cardListData['reviews'],
+                        price: cardListData['price'],
+                        distance: cardListData['distance'],
+                      ),
                     );
                   },
                 ),

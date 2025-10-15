@@ -3,7 +3,9 @@ import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 
 class ApartmentBookingScreen extends StatelessWidget {
-  const ApartmentBookingScreen({super.key});
+  final Map<String, dynamic> data;
+  final String? err;
+  const ApartmentBookingScreen({super.key, required this.data, required this.err});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,17 @@ class ApartmentBookingScreen extends StatelessWidget {
           child: Customappbar(onTap: () {
             
           },
-          title: 'rere',
+          title: data['title'],
           )
           ),
-          
+          const SizedBox(height: 12,),
+          Image.network(data["image"]),
+          Row(
+            children: [
+              Text(data['hello'] + 'Guest')
+            ],
+          )
+
         ],
       )),
     );
