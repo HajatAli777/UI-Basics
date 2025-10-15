@@ -215,16 +215,6 @@ class _HomepageState extends State<Homepage> {
                     );
                   },
                 ),
-                Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Text('can you do?'),
-                      )
-                    ],
-                  ),
-                )
-                
               ],
             ),
           ),
