@@ -30,7 +30,10 @@ class ReviewCard extends StatelessWidget {
                   Text('Hajat Ali'),
                   Text('10/3/2020'),
                 ],
-              )
+              ),
+              Icon(Icons.star, color: AppColors.toldTextColor,),
+              Text('5'),
+              Text('20', style: TextStyle(color: AppColors.subtitleTextColor.withValues(alpha: 0.5)),)
             ],
           )
         ],
