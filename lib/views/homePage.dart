@@ -21,6 +21,13 @@ class _HomepageState extends State<Homepage> {
       'reviews': 400,
       'price': 100,
       'distance': 12,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '3 Guest',
+      'beds': '3 Beds',
+      'bathroom': '1 Bathroom',
+      'bookingDate': "1 - 16 Dec",
+      "stayDays": "16 Days"
+
     },
     {
       'imageUrl':
@@ -30,6 +37,10 @@ class _HomepageState extends State<Homepage> {
       'reviews': 370,
       'price': 76,
       'distance': 34,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '4 Guest',
+      'beds': '4 Beds',
+      'bathroom': '1 Bathroom'
     },
     {
       'imageUrl':
@@ -39,6 +50,10 @@ class _HomepageState extends State<Homepage> {
       'reviews': 330,
       'price': 70,
       'distance': 20,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '2 Guest',
+      'beds': '2 Beds',
+      'bathroom': '1 Bathroom'
     },
     {
       'imageUrl':
@@ -48,6 +63,10 @@ class _HomepageState extends State<Homepage> {
       'reviews': 40,
       'price': 108,
       'distance': 42,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '6 Guest',
+      'beds': '6 Beds',
+      'bathroom': '3 Bathroom'
     },
     {
       'imageUrl':
@@ -57,6 +76,10 @@ class _HomepageState extends State<Homepage> {
       'reviews': 90,
       'price': 5,
       'distance': 4,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '5 Guest',
+      'beds': '6 Beds',
+      'bathroom': '1 Bathroom'
     },
     {
       'imageUrl':
@@ -66,6 +89,10 @@ class _HomepageState extends State<Homepage> {
       'reviews': 630,
       'price': 90,
       'distance': 23,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '2 Guest',
+      'beds': '2 Beds',
+      'bathroom': '1 Bathroom'
     },
     {
       'imageUrl':
@@ -75,6 +102,10 @@ class _HomepageState extends State<Homepage> {
       'reviews': 400,
       'price': 100,
       'distance': 12,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '2 Guest',
+      'beds': '2 Beds',
+      'bathroom': '1 Bathroom'
     },
     {
       'imageUrl':
@@ -84,6 +115,11 @@ class _HomepageState extends State<Homepage> {
       'reviews': 30,
       'price': 56,
       'distance':43,
+      'places': 'Pakistan,  india,  America,  Japan  ',
+      'guest': '4 Guest',
+      'beds': '4 Beds',
+      'bathroom': '1 Bathroom'
+      
     },
     {
       'imageUrl':
@@ -93,6 +129,10 @@ class _HomepageState extends State<Homepage> {
       'reviews': 330,
       'price': 73,
       'distance': 21,
+      'places': 'Turkey,  india,  America,  Japan  ',
+      'guest': '2 Guest',
+      'beds': '2 Beds',
+      'bathroom': '1 Bathroom'
     },
   ];
 
@@ -208,10 +248,7 @@ class _HomepageState extends State<Homepage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (c) => ApartmentBookingScreen(
-                              data: cardItem,
-                              err: 'df',
-                            ),
+                            builder: (c) => ApartmentBookingScreen(cardItem: cardItem, err: 'sd',)
                           ),
                         );
                       },
