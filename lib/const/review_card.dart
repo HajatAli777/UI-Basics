@@ -18,7 +18,18 @@ class ReviewCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                child: Image.network(src),
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle
+                ),
+                child: Image.network("assets/person.png",fit: BoxFit.cover ),
+              ),
+              Column(
+                children: [
+                  Text('Hajat Ali'),
+                  Text('10/3/2020'),
+                ],
               )
             ],
           )
