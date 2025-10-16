@@ -1,6 +1,8 @@
 import 'package:app/const/customAppbar.dart';
 import 'package:app/const/detail_container.dart';
+import 'package:app/const/primarybutton.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/booking_details_map_screen.dart';
 import 'package:flutter/material.dart';
 
 class ApartmentBookingScreen extends StatelessWidget {
@@ -11,6 +13,14 @@ class ApartmentBookingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: PrimaryButton(buttontext: 'Next', onTap: () {  
+          Navigator.push(context, MaterialPageRoute(builder: (c)=>BookingDetailsMapScreen()));
+        
+        },),
+      ),
+      
       body: SafeArea(child: 
       SingleChildScrollView(
         child: Column(
@@ -144,7 +154,96 @@ class ApartmentBookingScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold
                   ),),
                   const SizedBox(height: 20,),
-                  
+                  Container(
+      width: double.infinity,
+      height: 220,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: AppColors.secondaryColor,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle
+                  ),
+                  child: Image.network("assets/person.png",fit: BoxFit.cover ),
+                ),
+                Column(
+                  children: [
+                    Text('Hajat Ali' ,style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+                    Text('10/3/2020', style: TextStyle(color: AppColors.subtitleTextColor),),
+                  ],
+                ),
+                const SizedBox(width: 200,),
+                Icon(Icons.star, color: AppColors.toldTextColor,size: 35,),
+                const SizedBox(width: 13,),
+                Text('5', style: TextStyle(fontSize: 20),),
+                const SizedBox(width: 8,),
+                Text('(20)', style: TextStyle(color: AppColors.subtitleTextColor.withValues(alpha: 0.5), fontSize: 20),)
+              ],
+            ),
+            const SizedBox(height: 15,),
+            Text('Lorem ipsum dolor sit amet consectetur. Mauris non blandit nulla felis donec lacus etiam pharetra nunc. Quisque lacinia in tortor amet felis fames sem. Proin viverra praesent magna nisl cursus nunc magna blandit. At convallis pellentesque at sollicitudin et vitae. Etiam semper nec sit a. Ut semper orci ut quam. Fringilla.', 
+            style: TextStyle(
+              color: AppColors.subtitleTextColor,
+            ),)
+          ],
+        ),
+      ),
+    ),
+    const SizedBox(height: 15,),
+                 Container(
+      width: double.infinity,
+      height: 200,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: AppColors.secondaryColor,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle
+                  ),
+                  child: Image.network("assets/person.png",fit: BoxFit.cover ),
+                ),
+                Column(
+                  children: [
+                    Text('Hajat Ali' ,style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+                    Text('10/3/2020', style: TextStyle(color: AppColors.subtitleTextColor),),
+                  ],
+                ),
+                const SizedBox(width: 200,),
+                Icon(Icons.star, color: AppColors.toldTextColor,size: 35,),
+                const SizedBox(width: 13,),
+                Text('5', style: TextStyle(fontSize: 20),),
+                const SizedBox(width: 8,),
+                Text('(20)', style: TextStyle(color: AppColors.subtitleTextColor.withValues(alpha: 0.5), fontSize: 20),)
+              ],
+            ),
+            const SizedBox(height: 15,),
+            Text('Lorem ipsum dolor sit amet consectetur. Mauris non blandit nulla felis donec lacus etiam pharetra nunc. Quisque lacinia in tortor amet felis fames sem. Proin viverra praesent magna nisl cursus nunc magna blandit. At convallis pellentesque at sollicitudin et vitae. Etiam semper nec sit a. Ut semper orci ut quam. Fringilla.', 
+            style: TextStyle(
+              color: AppColors.subtitleTextColor,
+            ),)
+          ],
+        ),
+      ),
+    ),
+    const SizedBox(height: 100),
         
         
                 ]
