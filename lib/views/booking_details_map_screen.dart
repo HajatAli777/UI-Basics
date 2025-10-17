@@ -2,6 +2,7 @@ import 'package:app/const/customAppbar.dart';
 import 'package:app/const/custom_textfield.dart';
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
+import 'package:app/views/booking_details_personal_details.dart';
 import 'package:flutter/material.dart';
 
 class BookingDetailsMapScreen extends StatefulWidget {
@@ -19,11 +20,13 @@ class _BookingDetailsMapScreenState extends State<BookingDetailsMapScreen> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20.0),
         child: PrimaryButton(buttontext: 'Next', onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (c)=>BookingDetailsPersonalDetails()));
+
           
         }),
       ),
       body: SafeArea(child: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

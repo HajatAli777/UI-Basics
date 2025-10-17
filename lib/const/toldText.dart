@@ -9,28 +9,31 @@ class ToldText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start, // for better alignment
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-            color: AppColors.toldTextColor,
-            fontWeight: FontWeight.w600,
-            fontSize: 24,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start, // for better alignment
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              color: AppColors.toldTextColor,
+              fontWeight: FontWeight.w600,
+              fontSize: 24,
+            ),
           ),
-        ),
-        const SizedBox(height: 8), // add some spacing
-         Text(
-          subTitle,
-          
-          style: TextStyle(
-            color: AppColors.subtitleTextColor,
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
+          const SizedBox(height: 8), // add some spacing
+           Text(
+            subTitle,
+            
+            style: TextStyle(
+              color: AppColors.subtitleTextColor,
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
