@@ -39,10 +39,6 @@ class _BookingDetailsPersonalDetailsState
                     'Confirm your personal details for the host to ensure your accommodation',
               ),
               const SizedBox(height: 10),
-              // CustomTextField(label: 'Your Name', hint: 'Ali', controller: nameController),
-              // CustomTextField(label: 'Phone Number', hint: '+92355545453', controller: numberController),
-              // CustomTextField(label: 'Email', hint: 'example@email.com', controller: emailController),
-              // CustomTextField(label: 'Your comming from', hint: 'London xyz', controller: nameController),
               Container(
                 width: double.infinity,
 
@@ -80,6 +76,8 @@ class _BookingDetailsPersonalDetailsState
                   ],
                 ),
               ),
+              const SizedBox(height: 20,),
+              
             ],
           ),
         ),
