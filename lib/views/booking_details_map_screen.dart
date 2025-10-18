@@ -44,8 +44,8 @@ class _BookingDetailsMapScreenState extends State<BookingDetailsMapScreen> {
                Image.asset('assets/map.png'),
                const SizedBox(height: 16,),
                CustomTextField(label: 'Your location', hint: 'EX+1, Waterloo, London, England', controller: locationController),
-               const SizedBox(height: 12,),
-               Row(
+               const SizedBox(height: 14,),
+                Row(
                 children: [
                   Container(
                     width: 100,
@@ -59,13 +59,20 @@ class _BookingDetailsMapScreenState extends State<BookingDetailsMapScreen> {
                           spreadRadius: 0.2,
                           blurRadius: 0.2,
                           offset: Offset(1, 1)
-                        )
-                      ]
+                        ),
+                        
+                      ],
+                    
                     ),
+                    child: Icon(Icons.wallet),
                   )
                 ],
                )
+               
+              
             ],
+            
+
           ),
         ),
       )),
