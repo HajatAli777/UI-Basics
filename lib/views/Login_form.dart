@@ -1,6 +1,7 @@
 
 import 'package:app/const/line.dart';
 import 'package:app/const/toldText.dart';
+import 'package:app/controllers/login_controller.dart';
 import 'package:app/views/profileSetup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:app/const/custom_textfield.dart';
@@ -17,6 +18,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  LoginController loginController = LoginController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -138,11 +140,8 @@ Container(
                           PrimaryButton(
                             buttontext: "Login",
                               onTap: (){
-                              Navigator.push(
-                                context, MaterialPageRoute(
-                                  builder: (context) => ProfilesetupScreen()
-                                  )
-                                  );
+                                loginController.loginUser(passwordController.text, emailController.text, context);
+                              
                             },
                           ),
                           const SizedBox(height: 20),

@@ -1,3 +1,4 @@
+import 'package:app/controllers/splash_controller.dart';
 import 'package:app/views/Login_form.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
@@ -10,21 +11,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  SplashController splashController = SplashController();
   @override
   void initState() {
-    navigationToLoginScreen();
+
+    splashController.navigationToLoginScreen(context);
+
     super.initState();
   }
 
-  void navigationToLoginScreen() {
-    Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
-        (route) => false,
-      );
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
