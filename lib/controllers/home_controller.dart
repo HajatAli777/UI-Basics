@@ -1,4 +1,6 @@
 class HomeController {
+  List cardListData = [];
+
   List cardList = [
     {
       'imageUrl':
@@ -122,6 +124,15 @@ class HomeController {
       'bathroom': '1 Bathroom'
     },
   ];
+  void search(String query) {
+    
+    
+      cardList = cardListData.where((data) {
+        final title = data['title'].toString().toLowerCase();
+        return title.startsWith(query.toLowerCase());
+      }).toList();
+    
+  }
 
 
 }

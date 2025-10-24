@@ -13,30 +13,18 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+
   HomeController homeController = HomeController();
-  List cardListData = [];
-  List cardList = [];
+  
+  
   @override
   void initState() {
     super.initState();
-    cardListData = List.from(homeController.cardList);
-    cardList = List.from(homeController.cardList);
+    homeController.cardListData = List.from(homeController.cardList);
+   
   }
 
-  void search(String query) {
-    if (query.isEmpty) {
-      setState(() {
-        cardList = List.from(cardListData);
-      });
-      return;
-    }
-    setState(() {
-      cardList = cardListData.where((data) {
-        final title = data['title'].toString().toLowerCase();
-        return title.startsWith(query.toLowerCase());
-      }).toList();
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +69,19 @@ class _HomepageState extends State<Homepage> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
-                      onChanged: search,
+                      onChanged: (value){
+                        if(value.isEmpty){
+                          setState(() {
+                            homeController.cardList = List.from(homeController.cardListData);
+                          });
+
+                        }
+                        else{
+                          setState(() {
+                            homeController.search(value);
+                          });
+                        }
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         prefixIcon: const Icon(Icons.search, size: 30),
@@ -111,9 +111,9 @@ class _HomepageState extends State<Homepage> {
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: cardList.length,
+                  itemCount: homeController.cardList.length,
                   itemBuilder: (context, index) {
-                    var cardItem = cardList[index];
+                    var cardItem = homeController.cardList[index];
                     
                     return HomeCardWidget(
                       imageUrl: cardItem['imageUrl'],
