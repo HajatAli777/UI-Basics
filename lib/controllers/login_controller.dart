@@ -26,8 +26,7 @@ import 'package:flutter/material.dart';
 // }
 class LoginController {
   void loginUser(String password, String email, BuildContext context){
-    password= '122323';
-    email= 'ali324';
+    
     try{
       if(password.isEmpty || email.isEmpty){
         debugPrint("Passward and Email cannot be empty!");
