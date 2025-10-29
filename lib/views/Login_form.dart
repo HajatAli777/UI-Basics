@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       () => TextField(
                                         controller: passwordController,
                                         obscureText:
-                                            loginController.isClosed.value,
+                                            loginController.isshow.value,
                                         decoration: InputDecoration(
                                           hintText: "Enter your password",
                                           suffixIcon: InkWell(
@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               loginController.visible();
                                             },
                                             child: Icon(
-                                              loginController.isClosed.value
+                                              loginController.isshow.value
                                                   ? Icons.visibility_off
                                                   : Icons.visibility,
                                               color: AppColors.strokeColor,
