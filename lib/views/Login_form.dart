@@ -19,7 +19,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  LoginController loginController = LoginController();
+  LoginController loginController = Get.put(LoginController());
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -90,6 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               hint: "Enter your password",
                               controller: passwordController,
                               obscureText: true,
+                              icon: InkWell(onTap: (){},child: Icon(Icons.visibility_off,color: Colors.black,),),
                             ),
                                   
                                 ]
@@ -142,8 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             PrimaryButton(
                               buttontext: "Login",
                                 onTap: (){
-                                  loginController.loginUser(passwordController.text, emailController.text, context);
-                                  navigator?.push(MaterialPageRoute(builder: (c)=>LoginScreen()));
+                                  loginController.loginUser(passwordController.text, emailController.text,);
                                 
                               },
                             ),

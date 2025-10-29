@@ -2,6 +2,7 @@ import 'package:app/controllers/splash_controller.dart';
 import 'package:app/views/Login_form.dart';
 import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,14 +12,9 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  SplashController splashController = SplashController();
-  @override
-  void initState() {
+  SplashController splashController = Get.put(SplashController());
 
-    splashController.navigationToLoginScreen(context);
-
-    super.initState();
-  }
+ 
 
   
 

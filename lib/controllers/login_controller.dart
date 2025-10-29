@@ -1,5 +1,7 @@
+import 'package:app/views/homePage.dart';
 import 'package:app/views/profileSetup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // class LoginController {
 //   void loginUser(String password,String email, BuildContext context){
@@ -24,8 +26,8 @@ import 'package:flutter/material.dart';
   
 
 // }
-class LoginController {
-  void loginUser(String password, String email, BuildContext context){
+class LoginController extends GetxController{
+  void loginUser(String password, String email,){
     
     try{
       if(password.isEmpty || email.isEmpty){
@@ -36,6 +38,8 @@ class LoginController {
         password=password;
         email=email;
         debugPrint("Login sucessfully ");
+        Get.offAll(()=>Homepage());
+
       }
 
     }catch(e){

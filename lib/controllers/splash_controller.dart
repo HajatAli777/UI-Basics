@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController{
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    navigationToLoginScreen();
+  }
 
- void navigationToLoginScreen(BuildContext context) {
+ void navigationToLoginScreen() {
   
 
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
-        (route) => false,
-      );
+      Get.offAll(()=>LoginScreen());
+
     });
   }
 
