@@ -1,4 +1,14 @@
-class HomeController {
+import 'package:get/get.dart';
+
+class HomeController extends GetxController{
+    @override
+  void onInit() {
+    cardListData.assignAll(cardList);
+    super.onInit();
+  }
+
+  var originalData = <Map<String, dynamic>>[].obs;
+
   List cardListData = [];
 
   List cardList = [
@@ -123,10 +133,9 @@ class HomeController {
       'beds': '2 Beds',
       'bathroom': '1 Bathroom'
     },
-  ];
-  void search(String query) {
-    
-    
+  ].obs;
+  
+  void search(String query) { 
       cardList = cardListData.where((data) {
         final title = data['title'].toString().toLowerCase();
         return title.startsWith(query.toLowerCase());

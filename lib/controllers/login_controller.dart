@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController{
+  
+  
     var isshow = false.obs;
   void loginUser(String password, String email,){
     
