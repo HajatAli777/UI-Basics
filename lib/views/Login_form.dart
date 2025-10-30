@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               loginController.isshow.value
                                                   ? Icons.visibility_off
                                                   : Icons.visibility,
-                                              color: AppColors.strokeColor,
+                                              color: AppColors.subtitleTextColor,
                                             ),
                                           ),
                                           border: InputBorder.none,
