@@ -139,9 +139,6 @@ class HomeController extends GetxController{
       cardList = cardListData.where((data) {
         final title = data['title'].toString().toLowerCase();
         return title.startsWith(query.toLowerCase());
-      }).toList();
-    
+      }).toList(); 
   }
-
-
 }
