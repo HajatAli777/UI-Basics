@@ -12,21 +12,15 @@ class Homepage extends StatefulWidget {
   @override
   State<Homepage> createState() => _HomepageState();
 }
-
 class _HomepageState extends State<Homepage> {
 
   HomeController homeController = HomeController();
-  
-  
   @override
   void initState() {
     super.initState();
     homeController.cardListData = List.from(homeController.cardList);
    
   }
-
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
