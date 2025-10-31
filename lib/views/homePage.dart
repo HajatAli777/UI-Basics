@@ -4,6 +4,7 @@ import 'package:app/utills/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:app/views/apartment_booking_screen.dart';
 import 'package:app/views/filterScreen.dart';
+import 'package:get/get.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -108,6 +109,8 @@ class _HomepageState extends State<Homepage> {
                 ),
 
                 const SizedBox(height: 20),
+
+                Obx(()=>
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -132,7 +135,7 @@ class _HomepageState extends State<Homepage> {
                       },
                     );
                   },
-                ),
+                ),),
               ],
             ),
           ),
