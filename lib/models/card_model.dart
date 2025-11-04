@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class CardModel {
   final String title;
   final String imageUrl;
@@ -25,4 +27,34 @@ class CardModel {
         required this.price
         }
         );
+}
+Map<String, dynamic>fromJson(){
+  return {
+    'title': title,
+    'imageUrl': imageUrl,
+    'rating': rating,
+    'reviews': reviews,
+    'price': price,
+    'places': places,
+    'guest': guest,
+    'beds': beds,
+    'bathroom': bathroom,
+    'bookingDate': bookingDate,
+    'stayDays': stayDays,
+  };
+}
+Factory CardModel.fromJson(Map<String, dynamic> ){
+  return CardModel(
+    title: json['title'],
+    imageUrl: json['imageUrl'],
+    rating: json['rating'],
+    reviews: json['reviews'],
+    price: json['price'],
+    places: json['places'],
+    guest: json['guest'],
+    beds: json['beds'],
+    bathroom: json['bathroom'],
+    bookingDate: json['bookingDate'],
+    stayDays: json['stayDays'],
+  );
 }
