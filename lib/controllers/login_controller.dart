@@ -12,6 +12,7 @@ class LoginController extends GetxController{
     try{
       if(password.isEmpty || email.isEmpty){
         debugPrint("Passward and Email cannot be empty!");
+
         
       }
       else {
