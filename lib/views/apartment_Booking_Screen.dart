@@ -156,7 +156,7 @@ class ApartmentBookingScreen extends StatelessWidget {
                   const SizedBox(height: 20,),
                   Container(
       width: double.infinity,
-      height: 220,
+      height: 250,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: AppColors.secondaryColor,
@@ -173,7 +173,7 @@ class ApartmentBookingScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle
                   ),
-                  child: Image.network("assets/person.png",fit: BoxFit.cover ),
+                  child: Image.asset("assets/person.png",fit: BoxFit.cover ),
                 ),
                 Column(
                   children: [
@@ -181,15 +181,15 @@ class ApartmentBookingScreen extends StatelessWidget {
                     Text('10/3/2020', style: TextStyle(color: AppColors.subtitleTextColor),),
                   ],
                 ),
-                const SizedBox(width: 200,),
-                Icon(Icons.star, color: AppColors.toldTextColor,size: 35,),
+                const SizedBox(width: 120,),
+                Icon(Icons.star, color: AppColors.toldTextColor,size: 25,),
                 const SizedBox(width: 13,),
                 Text('5', style: TextStyle(fontSize: 20),),
                 const SizedBox(width: 8,),
                 Text('(20)', style: TextStyle(color: AppColors.subtitleTextColor.withValues(alpha: 0.5), fontSize: 20),)
               ],
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(height: 20,),
             Text('Lorem ipsum dolor sit amet consectetur. Mauris non blandit nulla felis donec lacus etiam pharetra nunc. Quisque lacinia in tortor amet felis fames sem. Proin viverra praesent magna nisl cursus nunc magna blandit. At convallis pellentesque at sollicitudin et vitae. Etiam semper nec sit a. Ut semper orci ut quam. Fringilla.', 
             style: TextStyle(
               color: AppColors.subtitleTextColor,
@@ -198,10 +198,10 @@ class ApartmentBookingScreen extends StatelessWidget {
         ),
       ),
     ),
-    const SizedBox(height: 15,),
+    const SizedBox(height: 20,),
                  Container(
       width: double.infinity,
-      height: 200,
+      height: 250,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: AppColors.secondaryColor,
@@ -212,13 +212,14 @@ class ApartmentBookingScreen extends StatelessWidget {
           children: [
             Row(
               children: [
+                
                 Container(
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle
                   ),
-                  child: Image.network("assets/person.png",fit: BoxFit.cover ),
+                  child: Image.asset("assets/person.png",fit: BoxFit.cover ),
                 ),
                 Column(
                   children: [
@@ -226,8 +227,8 @@ class ApartmentBookingScreen extends StatelessWidget {
                     Text('10/3/2020', style: TextStyle(color: AppColors.subtitleTextColor),),
                   ],
                 ),
-                const SizedBox(width: 200,),
-                Icon(Icons.star, color: AppColors.toldTextColor,size: 35,),
+                const SizedBox(width: 120,),
+                Icon(Icons.star, color: AppColors.toldTextColor,size: 25,),
                 const SizedBox(width: 13,),
                 Text('5', style: TextStyle(fontSize: 20),),
                 const SizedBox(width: 8,),
