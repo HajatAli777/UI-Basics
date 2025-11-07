@@ -100,7 +100,7 @@ class ApartmentBookingScreen extends StatelessWidget {
                   ),),
                   Row(
                     children: [
-                      Text(cardItem["bookingDate"]),
+                      Text("1704"),
                       const SizedBox(width: 8),
                       Container(
                         width: 8,
@@ -112,7 +112,7 @@ class ApartmentBookingScreen extends StatelessWidget {
                       ),
                       const SizedBox(width: 6),
         
-                      Text(cardItem["stayDays"]),
+                      Text("2004"),
                     ],
                   ),
                   const SizedBox(height: 10,),
