@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final LoginController loginController = Get.put(LoginController());
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  
 
   @override
   void dispose() {
@@ -32,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("this is user name ${loginController.userName}");
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: SafeArea(
