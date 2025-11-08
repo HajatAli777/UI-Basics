@@ -1,5 +1,8 @@
+import 'package:app/views/Login_form.dart';
 import 'package:app/views/homePage.dart';
 import 'package:app/views/profileSetup_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,7 +10,17 @@ class LoginController extends GetxController{
   
   
     var isshow = false.obs;
-  void loginUser(String password, String email,){
+    FirebaseAuth auth = FirebaseAuth.instance;
+    Future<void> fatchdata() async {
+      try{
+        debugPrint("fatching data");
+        await Future.delayed(Duration(seconds: 3));
+        debugPrint("fatching data completed");
+      } catch(e){
+        debugPrint("This is Error: $e");
+      }
+    }
+  Future<void> loginUser(String password, String email,) async {
     
     try{
       if(password.isEmpty || email.isEmpty){
@@ -18,18 +31,22 @@ class LoginController extends GetxController{
         
       }
       else {
-        password=password;
-        email=email;
-        debugPrint("Login sucessfully ");
-        Get.snackbar('congrats','Login sucessfully ');
-        Get.offAll(()=>Homepage());
+        await auth.createUserWithEmailAndPassword(email: email, password: password);
 
+      }
+      if(auth.currentUser != null){
+        debugPrint("User logged in successfully");
+        Get.snackbar("Success", "User logged in successfully");
+        Get.offAll(()=>Homepage());
       }
 
     }catch(e){
       debugPrint("This is Error: $e");
 
 
+    }
+    void loginUser(){
+      Get.offAll(()=>LoginScreen());
     }
 
   }
