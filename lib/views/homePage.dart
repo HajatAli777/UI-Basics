@@ -1,6 +1,7 @@
 import 'package:app/const/home_card_wedgits.dart';
 import 'package:app/controllers/home_controller.dart';
 import 'package:app/utills/colors.dart';
+import 'package:app/views/bottom_navbar/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:app/views/apartment_booking_screen.dart';
 import 'package:app/views/filterScreen.dart';
@@ -19,18 +20,17 @@ class _HomepageState extends State<Homepage> {
   void initState() {
     super.initState();
     homeController.cardListData = List.from(homeController.cardList);
-   
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: NavBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // Header Row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
