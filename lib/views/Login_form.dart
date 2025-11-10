@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-// Imports
 import 'package:app/const/line.dart';
 import 'package:app/const/toldText.dart';
 import 'package:app/controllers/login_controller.dart';
@@ -33,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("this is user name ${loginController.userName}");
+    debugPrint("this is user name ${loginController.userName.value}");
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: SafeArea(

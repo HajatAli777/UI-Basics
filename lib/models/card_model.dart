@@ -27,34 +27,22 @@
 //         required this.price
 //         }
 //         );
-// }
-// Map<String, dynamic>fromJson(){
-//   return {
-//     'title': title,
-//     'imageUrl': imageUrl,
-//     'rating': rating,
-//     'reviews': reviews,
-//     'price': price,
-//     'places': places,
-//     'guest': guest,
-//     'beds': beds,
-//     'bathroom': bathroom,
-//     'bookingDate': bookingDate,
-//     'stayDays': stayDays,
-//   };
-// }
-// Factory CardModel.fromJson(Map<String, dynamic> ){
-//   return CardModel(
-//     title: json['title'],
-//     imageUrl: json['imageUrl'],
-//     rating: json['rating'],
-//     reviews: json['reviews'],
-//     price: json['price'],
-//     places: json['places'],
-//     guest: json['guest'],
-//     beds: json['beds'],
-//     bathroom: json['bathroom'],
-//     bookingDate: json['bookingDate'],
-//     stayDays: json['stayDays'],
-//   );
+//         Map<String, dynamic> toJson(){
+//           return{
+//             'title': title,
+//             'imageUrl': imageUrl,
+//             'rating': rating,
+//             'reviews': reviews,
+//             'price': price,
+//             'places': places,
+//             'guest': guest,
+//             'beds': beds,
+//             'bathroom': bathroom,
+//             'bookingDate': bookingDate,
+//             'stayDays': stayDays,
+//           };
+//         }
+//       factory CardModel.fromJson(Map<String, dynamic> map){
+//         return CardModel(title: map["title"]??"", places: map, imageUrl: imageUrl, rating: rating, reviews: reviews, guest: guest, beds: beds, bathroom: bathroom, bookingDate: bookingDate, stayDays: stayDays, price: price)
+//       }
 // }

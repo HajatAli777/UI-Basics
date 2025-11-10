@@ -3,9 +3,11 @@ import 'package:app/const/custom_textfield.dart';
 import 'package:app/const/line.dart';
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/toldText.dart';
+import 'package:app/controllers/login_controller.dart';
 import 'package:app/utills/colors.dart';
 import 'package:app/views/create_password_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Signupscreen extends StatefulWidget {
   const Signupscreen({super.key});
@@ -18,6 +20,7 @@ class _SignupscreenState extends State<Signupscreen> {
     final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final nameController = TextEditingController();
+  LoginController loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -125,14 +128,8 @@ Container(
                     const SizedBox(height: 10,),
                     PrimaryButton(
                       onTap: () {
-        
-                        Navigator.push(
-                          context, MaterialPageRoute(
-                            builder: (_)=>const CreatePasswordScreen()
-                            )
-                            );
-                        
-                        
+                        loginController.createUser(emailController.text.trim(),
+                         passwordController.text.trim());
                       },
                       buttontext: 'Create Password',
                       

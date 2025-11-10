@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController{
-  
-  
+  var userName = "".obs;
     var isshow = false.obs;
     FirebaseAuth auth = FirebaseAuth.instance;
     Future<void> fatchdata() async {
@@ -20,38 +19,48 @@ class LoginController extends GetxController{
         debugPrint("This is Error: $e");
       }
     }
-  Future<void> loginUser(String password, String email,) async {
-    
-    try{
-      if(password.isEmpty || email.isEmpty){
-        debugPrint("Passward and Email cannot be empty!");
-        Get.snackbar("Error", "Passward and Email cannot be empty!");
-        
+  void loginUser(String email, String password) async{
+      try{
+        if (email.isEmpty || password.isEmpty){
+          Get.snackbar("Error", "Email and Password cannot be empty");
+          return;
 
-        
+        }
+        else{
+          await auth.signInWithEmailAndPassword(email: email, password: password);
+if(auth.currentUser != null){
+            
+            Get.snackbar("Success", "Login Successful");
+            Get.offAll(()=>Homepage());
+          }
+        }
+
+      }catch(e){
+        debugPrint("This is Error: $e");
       }
-      else {
-        await auth.createUserWithEmailAndPassword(email: email, password: password);
-
-      }
-      if(auth.currentUser != null){
-        debugPrint("User logged in successfully");
-        Get.snackbar("Success", "User logged in successfully");
-        Get.offAll(()=>Homepage());
-      }
-
-    }catch(e){
-      debugPrint("This is Error: $e");
-
-
     }
-    void loginUser(){
-      Get.offAll(()=>LoginScreen());
-    }
-
-  }
   void visible() {
     isshow.value = !isshow.value;
     debugPrint("this is the value:${isshow.value}");
+  }
+  void createUser(String email, String password) async {
+    try{
+      if(email.isEmpty || password.isEmpty){
+        Get.snackbar("Error", "Email and Password cannot be empty");
+        return;
+      }
+      else{
+        await auth.createUserWithEmailAndPassword(email: email, password: password);
+        if(auth.currentUser != null){
+          Get.snackbar("Success", "User created successfully");
+          Get.offAll(()=>Homepage());
+        }
+      }
+
+
+    }
+    catch(e){
+      debugPrint("This is Error: $e");
+    }
   }
 }
