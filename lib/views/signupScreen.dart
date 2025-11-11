@@ -56,10 +56,8 @@ class _SignupscreenState extends State<Signupscreen> {
                       title: 'Create Account',
                        subTitle: 'New to TripPani! Enter in your details to create your account',
 
-                    ),
-                                        
-
-Container(
+                    ),                         
+                          Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: AppColors.textFieldFillColor,
@@ -129,7 +127,8 @@ Container(
                     PrimaryButton(
                       onTap: () {
                         loginController.createUser(emailController.text.trim(),
-                         passwordController.text.trim());
+                         passwordController.text.trim(), nameController.text.trim());
+                        Get.to(()=>CreatePasswordScreen());
                       },
                       buttontext: 'Create Password',
                       
@@ -213,4 +212,4 @@ Container(
       ),
     );
   }
-}
+}   

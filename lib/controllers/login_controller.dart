@@ -1,8 +1,8 @@
-import 'package:app/views/Login_form.dart';
-import 'package:app/views/homePage.dart';
-import 'package:app/views/profileSetup_screen.dart';
+import 'package:app/const/loading_dialog.dart';
+import 'package:app/models/user_model.dart';
+import 'package:app/views/bottom_navbar/navbar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +10,7 @@ class LoginController extends GetxController{
   var userName = "".obs;
     var isshow = false.obs;
     FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
     Future<void> fatchdata() async {
       try{
         debugPrint("fatching data");
@@ -24,18 +25,19 @@ class LoginController extends GetxController{
         if (email.isEmpty || password.isEmpty){
           Get.snackbar("Error", "Email and Password cannot be empty");
           return;
-
         }
         else{
+          Get.dialog(LoadingDialog(), barrierDismissible: false);
           await auth.signInWithEmailAndPassword(email: email, password: password);
 if(auth.currentUser != null){
             
             Get.snackbar("Success", "Login Successful");
-            Get.offAll(()=>Homepage());
+            Get.offAll(()=>NavBar());
           }
         }
 
       }catch(e){
+        Get.back();
         debugPrint("This is Error: $e");
       }
     }
@@ -43,23 +45,27 @@ if(auth.currentUser != null){
     isshow.value = !isshow.value;
     debugPrint("this is the value:${isshow.value}");
   }
-  void createUser(String email, String password) async {
+  void createUser(String email, String password, String name) async {
     try{
       if(email.isEmpty || password.isEmpty){
         Get.snackbar("Error", "Email and Password cannot be empty");
         return;
       }
       else{
+        Get.dialog(LoadingDialog(), barrierDismissible: false);
         await auth.createUserWithEmailAndPassword(email: email, password: password);
         if(auth.currentUser != null){
           Get.snackbar("Success", "User created successfully");
-          Get.offAll(()=>Homepage());
+          userDataModel user = userDataModel(uid: auth.currentUser!.uid, name: name, email: email);
+          await firestore.collection('users').doc(auth.currentUser!.uid).set(user.touserdata());
+          Get.offAll(()=>NavBar());
         }
       }
 
 
     }
     catch(e){
+      Get.back();
       debugPrint("This is Error: $e");
     }
   }

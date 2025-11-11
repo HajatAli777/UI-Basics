@@ -20,11 +20,11 @@ class _HomepageState extends State<Homepage> {
   void initState() {
     super.initState();
     homeController.cardListData = List.from(homeController.cardList);
+    
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: NavBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

@@ -13,10 +13,10 @@ class Profilesetup2Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-  backgroundColor: Colors.transparent, // Remove background color
-  elevation: 0, // Remove AppBar shadow
+  backgroundColor: Colors.transparent, 
+  elevation: 0, 
   centerTitle: true,
-  automaticallyImplyLeading: false, // Remove back button
+  automaticallyImplyLeading: false, 
   title: Image.asset("assets/Logo.png", height: 30, width: 80),
 ),
 
