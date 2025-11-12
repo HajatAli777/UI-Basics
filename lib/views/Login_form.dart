@@ -142,8 +142,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 24),
-
-                        // --- Terms & Conditions ---
                         Row(
                           children: [
                             Container(
@@ -178,7 +176,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 20),
 
-                        // --- Login Button ---
+                        
                         PrimaryButton(
                           buttontext: "Login",
                           onTap: () {

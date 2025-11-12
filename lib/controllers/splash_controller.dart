@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class SplashController extends GetxController{
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -12,22 +13,26 @@ class SplashController extends GetxController{
   void onInit() {
    
     super.onInit();
-    navigationToLoginScreen();
+    manageUserSession();
   }
 
- void navigationToLoginScreen() {
-  
-
+ void manageUserSession() async{
+   
     Future.delayed(Duration(seconds: 3), () {
-      if (auth.currentUser == null){
-        Get.offAll(()=>LoginScreen());
+      if (auth.currentUser == null && auth.currentUser!.emailVerified){
+        Get.offAll(()=>NavBar());
 
       }
       else{
-        Get.offAll(()=>NavBar());
+        Get.offAll(()=>LoginScreen());
       }
       
 
+    });
+  }
+  void NavigationToLoginScreen(){
+    Future.delayed(Duration(seconds: 3), () {
+      Get.offAll(()=>LoginScreen());
     });
   }
 

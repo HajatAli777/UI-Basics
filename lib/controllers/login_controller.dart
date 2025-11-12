@@ -30,7 +30,7 @@ class LoginController extends GetxController{
         else{
           Get.dialog(LoadingDialog(), barrierDismissible: false);
           await auth.signInWithEmailAndPassword(email: email, password: password);
-if(auth.currentUser != null){
+if(auth.currentUser != null && auth.currentUser!.emailVerified){
             
             Get.snackbar("Success", "Login Successful");
             Get.offAll(()=>NavBar());
@@ -75,6 +75,43 @@ if(auth.currentUser != null){
       await auth.signOut();
       Get.snackbar("Success", "User logged out successfully");
       Get.offAll(()=>LoginScreen());
+    }catch(e){
+      debugPrint("This is Error: $e");
+    }
+  }
+  Future<void>registerUser(String email, String password) async {
+    try{
+      if(email.isEmpty || password.isEmpty){
+        Get.snackbar("Error", "Email and Password cannot be empty");
+        return;
+      }
+      else{
+        Get.dialog(LoadingDialog(), barrierDismissible: false);
+        await auth.createUserWithEmailAndPassword(email: email, password: password);
+        if(auth.currentUser!.uid.isNotEmpty){
+          userDataModel user = userDataModel(uid: auth.currentUser!.uid, name: '', email: email);
+          await firestore.collection('users').doc(auth.currentUser!.uid).set(user.touserdata());
+          auth.currentUser!.sendEmailVerification();
+          Get.snackbar("Success", "User registered successfully. Please verify your email.");
+          debugPrint("user registered: ${auth.currentUser!.uid}");
+          Get.offAll( ()=>LoginScreen());
+        }
+      }
+    }catch(e){
+      debugPrint("This is Error: $e");
+    }
+  }
+  void resetPassword(String email) async {
+    try{
+      if(email.isEmpty){
+        Get.snackbar("Error", "Email cannot be empty");
+        return;
+      }
+      Get.dialog(LoadingDialog(), barrierDismissible: false);
+      await auth.sendPasswordResetEmail(email: email);
+      Get.to( ()=>LoginScreen());
+      Get.snackbar("Success", "Password reset email sent. Please check your inbox.");
+
     }catch(e){
       debugPrint("This is Error: $e");
     }
