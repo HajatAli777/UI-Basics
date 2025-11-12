@@ -1,5 +1,6 @@
 import 'package:app/const/loading_dialog.dart';
 import 'package:app/models/user_model.dart';
+import 'package:app/views/Login_form.dart';
 import 'package:app/views/bottom_navbar/navbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -66,6 +67,15 @@ if(auth.currentUser != null){
     }
     catch(e){
       Get.back();
+      debugPrint("This is Error: $e");
+    }
+  }
+  void logoutUser()async{
+    try{
+      await auth.signOut();
+      Get.snackbar("Success", "User logged out successfully");
+      Get.offAll(()=>LoginScreen());
+    }catch(e){
       debugPrint("This is Error: $e");
     }
   }

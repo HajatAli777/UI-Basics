@@ -1,4 +1,5 @@
 import 'package:app/views/Login_form.dart';
+import 'package:app/views/bottom_navbar/navbar.dart';
 import 'package:app/views/homePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,7 +24,7 @@ class SplashController extends GetxController{
 
       }
       else{
-        Get.offAll(()=>Homepage());
+        Get.offAll(()=>NavBar());
       }
       
 

@@ -128,7 +128,7 @@ class _SignupscreenState extends State<Signupscreen> {
                       onTap: () {
                         loginController.createUser(emailController.text.trim(),
                          passwordController.text.trim(), nameController.text.trim());
-                        Get.to(()=>CreatePasswordScreen());
+                        
                       },
                       buttontext: 'Create Password',
                       
@@ -204,8 +204,6 @@ class _SignupscreenState extends State<Signupscreen> {
 
             )
             )
-            
-            
           ],
         )),
 
