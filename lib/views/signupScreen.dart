@@ -89,14 +89,10 @@ class _SignupscreenState extends State<Signupscreen> {
                       label: 'Password', 
                       hint: '******', 
                       controller: passwordController
-                      ),
-                               
+                      ),    
                               ]
                             ),
     ),
-                    
-                    
-                    // 
                     const SizedBox(height: 25,),
                     Row(
                       children: [
