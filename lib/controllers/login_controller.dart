@@ -59,7 +59,10 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
           Get.snackbar("Success", "User created successfully");
           userDataModel user = userDataModel(uid: auth.currentUser!.uid, name: name, email: email);
           await firestore.collection('users').doc(auth.currentUser!.uid).set(user.touserdata());
-          Get.offAll(()=>NavBar());
+          await auth.currentUser!.sendEmailVerification();
+          Get.snackbar("Success", "Verification email sent. Please check your inbox.");
+          Get.offAll(()=>LoginScreen());
+
         }
       }
 
@@ -70,13 +73,24 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
       debugPrint("This is Error: $e");
     }
   }
+  //User Logout
   void logoutUser()async{
     try{
       await auth.signOut();
       Get.snackbar("Success", "User logged out successfully");
       Get.offAll(()=>LoginScreen());
-    }catch(e){
+    }on FirebaseAuthException catch(e){
+      //Login errors
+      if(e.code == 'no-user-found'){
+        Get.back();
+        Get.snackbar("Error", "No user found for that email.");
+      }
+      else if(e.code == 'wrong-password'){
+        Get.back();
+        Get.snackbar("Error", "Wrong password provided for that user.");
+      }
       debugPrint("This is Error: $e");
+      Get.back();
     }
   }
   Future<void>registerUser(String email, String password, String trim) async {

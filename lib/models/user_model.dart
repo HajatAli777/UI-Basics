@@ -2,17 +2,18 @@ class userDataModel {
   final String uid;
   final String name;
   final String email;
+  final String? profilepic;
 
 
   userDataModel(
-    {required this.uid,required this.name,required this.email,});
-
+    {required this.uid,required this.name,required this.email, this.profilepic});
  
   Map<String, dynamic> touserdata() {
     return {
       'uid': uid,
       'name': name,
       'email': email,
+      'profilepic': profilepic,
       
     };
   }
@@ -21,6 +22,7 @@ class userDataModel {
       uid: map['uid'],
       name: map['name'],
       email: map['email'],
+      profilepic: map['profilepic'],
     );
   }
 }
