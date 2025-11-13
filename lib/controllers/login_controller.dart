@@ -79,7 +79,7 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
       debugPrint("This is Error: $e");
     }
   }
-  Future<void>registerUser(String email, String password) async {
+  Future<void>registerUser(String email, String password, String trim) async {
     try{
       if(email.isEmpty || password.isEmpty){
         Get.snackbar("Error", "Email and Password cannot be empty");

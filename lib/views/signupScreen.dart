@@ -21,7 +21,7 @@ class _SignupscreenState extends State<Signupscreen> {
   final passwordController = TextEditingController();
   final nameController = TextEditingController();
   LoginController loginController = Get.put(LoginController());
-
+var confirmPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,11 +122,17 @@ class _SignupscreenState extends State<Signupscreen> {
                     const SizedBox(height: 10,),
                     PrimaryButton(
                       onTap: () {
-                        loginController.createUser(emailController.text.trim(),
-                         passwordController.text.trim(), nameController.text.trim());
-                        
+                        if(passwordController.text != confirmPasswordController.text) {
+                          Get.snackbar("Error", "Passwords do not match");
+                          return;
+                        }
+                        loginController.registerUser(
+                          nameController.text.trim(),
+                          emailController.text.trim(),
+                          passwordController.text.trim()
+                        );
                       },
-                      buttontext: 'Create Password',
+                      buttontext: 'Register User',
                       
                     ),
                   const SizedBox(height: 20,),

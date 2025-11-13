@@ -1,3 +1,4 @@
+import 'package:app/views/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/const/line.dart';
@@ -8,6 +9,7 @@ import 'package:app/const/custom_textfield.dart';
 import 'package:app/const/primarybutton.dart';
 import 'package:app/const/authbutton.dart';
 import 'package:app/utills/colors.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -20,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final LoginController loginController = Get.put(LoginController());
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
   
 
   @override
@@ -66,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 12),
 
-                        // --- Text Fields Container ---
+                      
                         Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -78,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // Email
+                        
                               CustomTextField(
                                 label: "Email",
                                 hint: "Enter your email",
@@ -86,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               Divider(color: AppColors.subtitleTextColor),
 
-                              // --- Password Field with Obx ---
+                            
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 8.0),
@@ -132,12 +135,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(height: 10),
                         Align(
                           alignment: Alignment.centerRight,
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(
-                              color: AppColors.primaryColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(()=>ForgotPasswordScreen());
+                            },
+                            child: Text(
+                              "Forgot Password?",
+                              style: TextStyle(
+                                color: AppColors.primaryColor,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ),
@@ -189,7 +197,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         const SizedBox(height: 20),
 
-                        // --- Divider ---
+              
                         Row(
                           children: [
                             Expanded(
@@ -209,7 +217,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 20),
 
-                        // --- Auth Buttons ---
+              
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -230,7 +238,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 20),
 
-                        // --- Sign Up Navigation ---
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
