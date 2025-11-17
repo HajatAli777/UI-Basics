@@ -2,6 +2,7 @@ import 'package:app/const/home_card_wedgits.dart';
 import 'package:app/controllers/home_controller.dart';
 import 'package:app/utills/colors.dart';
 import 'package:app/views/bottom_navbar/navbar.dart';
+import 'package:app/views/bottom_navbar_screens.dart/card_Data.dart';
 import 'package:flutter/material.dart';
 import 'package:app/views/apartment_booking_screen.dart';
 import 'package:app/views/filterScreen.dart';
@@ -25,7 +26,8 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.move_to_inbox), onPressed: () {
+        Get.to(()=> const CardData());
         
       },),
       body: SafeArea(
