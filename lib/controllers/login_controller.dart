@@ -58,7 +58,7 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
         if(auth.currentUser != null){
           Get.snackbar("Success", "User created successfully");
           userDataModel user = userDataModel(uid: auth.currentUser!.uid, name: name, email: email);
-          await firestore.collection('users').doc(auth.currentUser!.uid).set(user.touserdata());
+          await firestore.collection('users').doc(auth.currentUser!.uid).set(user.toJson());
           await auth.currentUser!.sendEmailVerification();
           Get.snackbar("Success", "Verification email sent. Please check your inbox.");
           Get.offAll(()=>LoginScreen());
@@ -104,7 +104,7 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
         await auth.createUserWithEmailAndPassword(email: email, password: password);
         if(auth.currentUser!.uid.isNotEmpty){
           userDataModel user = userDataModel(uid: auth.currentUser!.uid, name: '', email: email);
-          await firestore.collection('users').doc(auth.currentUser!.uid).set(user.touserdata());
+          await firestore.collection('users').doc(auth.currentUser!.uid).set(user.toJson());
           auth.currentUser!.sendEmailVerification();
           Get.snackbar("Success", "User registered successfully. Please verify your email.");
           debugPrint("user registered: ${auth.currentUser!.uid}");

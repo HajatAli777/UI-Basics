@@ -13,6 +13,7 @@ class Profile extends StatelessWidget {
       child: PrimaryButton(buttontext: "logout", onTap: (){
         loginController.logoutUser();
       }),
+      
     );
   }
 }
