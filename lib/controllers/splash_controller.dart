@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class SplashController extends GetxController{
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -19,7 +18,7 @@ class SplashController extends GetxController{
  void manageUserSession() async{
    
     Future.delayed(Duration(seconds: 3), () {
-      if (auth.currentUser == null && auth.currentUser!.emailVerified){
+      if (auth.currentUser != null && auth.currentUser!.emailVerified){
         Get.offAll(()=>NavBar());
 
       }

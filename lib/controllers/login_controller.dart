@@ -57,7 +57,7 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
         await auth.createUserWithEmailAndPassword(email: email, password: password);
         if(auth.currentUser != null){
           Get.snackbar("Success", "User created successfully");
-          userDataModel user = userDataModel(uid: auth.currentUser!.uid, name: name, email: email);
+          UserDataModel user = UserDataModel(uid: auth.currentUser!.uid, name: name, email: email);
           await firestore.collection('users').doc(auth.currentUser!.uid).set(user.toJson());
           await auth.currentUser!.sendEmailVerification();
           Get.snackbar("Success", "Verification email sent. Please check your inbox.");
@@ -93,7 +93,7 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
       Get.back();
     }
   }
-  Future<void>registerUser(String email, String password, String trim) async {
+  Future<void>registerUser(String email, String password, String name) async {
     try{
       if(email.isEmpty || password.isEmpty){
         Get.snackbar("Error", "Email and Password cannot be empty");
@@ -103,7 +103,7 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
         Get.dialog(LoadingDialog(), barrierDismissible: false);
         await auth.createUserWithEmailAndPassword(email: email, password: password);
         if(auth.currentUser!.uid.isNotEmpty){
-          userDataModel user = userDataModel(uid: auth.currentUser!.uid, name: '', email: email);
+          UserDataModel user = UserDataModel(uid: auth.currentUser!.uid, name: name, email: email);
           await firestore.collection('users').doc(auth.currentUser!.uid).set(user.toJson());
           auth.currentUser!.sendEmailVerification();
           Get.snackbar("Success", "User registered successfully. Please verify your email.");
@@ -112,6 +112,7 @@ if(auth.currentUser != null && auth.currentUser!.emailVerified){
         }
       }
     }catch(e){
+      Get.back();
       debugPrint("This is Error: $e");
     }
   }

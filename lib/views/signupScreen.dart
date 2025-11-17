@@ -122,14 +122,13 @@ var confirmPasswordController = TextEditingController();
                     const SizedBox(height: 10,),
                     PrimaryButton(
                       onTap: () {
-                        if(passwordController.text != confirmPasswordController.text) {
-                          Get.snackbar("Error", "Passwords do not match");
-                          return;
-                        }
+          
                         loginController.registerUser(
-                          nameController.text.trim(),
                           emailController.text.trim(),
-                          passwordController.text.trim()
+                          passwordController.text.trim(),
+                          nameController.text.trim(),
+                          
+                          
                         );
                       },
                       buttontext: 'Register User',

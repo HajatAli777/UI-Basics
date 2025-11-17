@@ -1,11 +1,11 @@
-class userDataModel {
+class UserDataModel {
   final String uid;
   final String name;
   final String email;
   final String? profilepic;
 
 
-  userDataModel(
+  UserDataModel(
     {required this.uid,required this.name,required this.email, this.profilepic});
  
   Map<String, dynamic> toJson() {
@@ -17,8 +17,8 @@ class userDataModel {
       
     };
   }
-  factory userDataModel.fromJson(Map<String, dynamic> map) {
-    return userDataModel(
+  factory UserDataModel.fromJson(Map<String, dynamic> map) {
+    return UserDataModel(
       uid: map['uid'],
       name: map['name'],
       email: map['email'],
