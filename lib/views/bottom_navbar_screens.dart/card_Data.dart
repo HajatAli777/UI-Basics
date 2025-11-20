@@ -9,6 +9,8 @@ class CardData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List rooms = [1,2,3,4,5];
+    int? selectedRoom; 
     var cardDataController = Get.put(CardDataController());
     return Scaffold(
       body: SafeArea(child: Column(
@@ -35,9 +37,24 @@ class CardData extends StatelessWidget {
               
             ),
           ),
+          DropdownButton(
+              hint: Text("Select numbers of rooms"),
+              isExpanded: true,
+              value: selectedRoom,
+              items: rooms.map((value) {
+                return DropdownMenuItem(
+                  value: value,
+                  child: Text(value.toString()),
+                );
+              }).toList(),
+              onChanged: (value) {
+                selectedRoom = int.parse(value.toString());
+              },
+            ),
           PrimaryButton(buttontext: "Upload Image", onTap: (){
-            
-          })
+            cardDataController.uploadToFirestore();
+          }),
+
         ],
       )),
     );
