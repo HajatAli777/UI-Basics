@@ -109,8 +109,13 @@ class _HomepageState extends State<Homepage> {
 
                 const SizedBox(height: 20),
 
-                Obx(()=>
-                ListView.builder(
+                Obx((){
+                  if(homeController.cardList.isEmpty){
+                    return const Center(
+                      child: Text("No data found"),
+                    );
+                }
+           return     ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: homeController.cardList.length,
@@ -118,23 +123,33 @@ class _HomepageState extends State<Homepage> {
                     var cardItem = homeController.cardList[index];
                     
                     return HomeCardWidget(
-                      imageUrl: cardItem['imageUrl'],
-                      title: cardItem['title'],
-                      rating: cardItem['rating'].toDouble(),
-                      reviews: cardItem['reviews'],
-                      price: cardItem['price'],
-                      distance: cardItem['distance'],
+                      imageUrl: cardItem.imageUrl,
+                      title: cardItem.title,
+                      rating: cardItem.rating.toDouble(),
+                      reviews: cardItem.reviews,
+                      price: cardItem.price,
+                      distance: cardItem.distance,
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (c) => ApartmentBookingScreen(cardItem: cardItem, err: 'sd',)
+                            builder: (c) => ApartmentBookingScreen(
+                              cardItem: {
+                                'imageUrl': cardItem.imageUrl,
+                                'title': cardItem.title,
+                                'rating': cardItem.rating,
+                                'reviews': cardItem.reviews,
+                                'price': cardItem.price,
+                                'distance': cardItem.distance,
+                              },
+                              err: 'sd',
+                            ),
                           ),
                         );
                       },
                     );
                   },
-                ),),
+                );}),
               ],
             ),
           ),

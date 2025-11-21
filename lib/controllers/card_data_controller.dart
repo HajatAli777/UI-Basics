@@ -37,6 +37,7 @@ class CardDataController extends GetxController {
       final downLoadUrl = await snapShot.ref.getDownloadURL();
       return downLoadUrl;
     } catch (e) {
+      Get.back();
       debugPrint("Error uploading image: $e");
       return null;
     }
@@ -46,10 +47,10 @@ class CardDataController extends GetxController {
       Get.dialog(LoadingDialog(), barrierDismissible: false);
       final imageUrl = await uploadImage();
       if(imageUrl != null){
-        final cardData = CardModel(
-          imageUrl: imageUrl, title: 'Ramada', places: 'the place', rating: 4.5, reviews: 100, guest: 'guest', beds: '4', bathroom: '1', bookingDate: '25/2/2004', stayDays: '3', price: 20,
-        );
-        await firestore.collection("cardData").doc(uuid).set(cardData.toJson());
+        final cardData = {
+          "imageUrl": imageUrl, "title": 'Ramada', "places": 'the place', "rating": 4.5, "reviews": 100, "guest": 'guest', "beds": '4', "bathroom": '1', "bookingDate": '25/2/2004', "stayDays": '3', "price": 20,"distance": 500
+        };
+        await firestore.collection("cardData").doc(uuid).set(cardData);
         Get.back(); 
         Get.snackbar("Success", "Card data uploaded successfully");
 

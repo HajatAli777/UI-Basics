@@ -12,6 +12,8 @@ class CardModel {
   final String bathroom;
   final String bookingDate;
   final String stayDays;
+  final int distance;
+
   const CardModel( 
     { 
     required this.title,
@@ -24,7 +26,8 @@ class CardModel {
       required this.bathroom,
        required this.bookingDate,
         required this.stayDays, 
-        required this.price
+        required this.price,
+        required this.distance
         }
         );
         Map<String, dynamic> toJson(){
@@ -40,6 +43,7 @@ class CardModel {
             'bathroom': bathroom,
             'bookingDate': bookingDate,
             'stayDays': stayDays,
+            'distance': distance,
           };
         }
       factory CardModel.fromJson(Map<String, dynamic> map){
@@ -53,6 +57,9 @@ class CardModel {
         bathroom: map["bathroom"],
         bookingDate: map["bookingDate"],
         stayDays: map["stayDays"],
-        price: map["price"]);
+        price: map["price"],
+        distance: map["distance"],
+        );
+        
       }
 }
