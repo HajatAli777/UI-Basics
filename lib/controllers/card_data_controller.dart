@@ -3,14 +3,16 @@ import 'package:app/const/loading_dialog.dart';
 import 'package:app/models/card_model.dart';
 import 'package:app/views/bottom_navbar_screens.dart/card_Data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uuid/uuid.dart';
 
 class CardDataController extends GetxController {
   var firestore = FirebaseFirestore.instance;
-  var storage = FirebaseFirestore.instance;
+  var storage = FirebaseStorage.instance.ref();
   var selectedImage = Rxn<File>();
   var _imagePicker = ImagePicker();
   var uuid = Uuid().v1();
@@ -47,7 +49,7 @@ class CardDataController extends GetxController {
         final cardData = CardModel(
           imageUrl: imageUrl, title: 'Ramada', places: 'the place', rating: 4.5, reviews: 100, guest: 'guest', beds: '4', bathroom: '1', bookingDate: '25/2/2004', stayDays: '3', price: 20,
         );
-        await firestore.collection("cardData").doc()
+        await firestore.collection("cardData").doc(uuid).set(cardData.toJson());
         Get.back(); 
         Get.snackbar("Success", "Card data uploaded successfully");
 
