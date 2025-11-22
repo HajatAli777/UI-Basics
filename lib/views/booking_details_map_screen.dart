@@ -7,6 +7,7 @@ import 'package:app/utills/colors.dart';
 import 'package:app/views/booking_details_personal_details.dart';
 import 'package:flutter/material.dart';
 
+
 class BookingDetailsMapScreen extends StatefulWidget {
   const BookingDetailsMapScreen({super.key});
 

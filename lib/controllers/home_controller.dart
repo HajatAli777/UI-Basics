@@ -1,4 +1,6 @@
 import 'package:app/models/card_model.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController{
@@ -9,6 +11,7 @@ class HomeController extends GetxController{
   }
 
   var originalData = <CardModel>[].obs;
+  var isLodding = false.obs;
 
   List<CardModel> cardListData = [];
 
@@ -20,5 +23,13 @@ class HomeController extends GetxController{
         final title = data.title.toLowerCase();
         return title.startsWith(query.toLowerCase());
       }).toList(); 
+  }
+  void fetchData(){
+    try{
+      isLodding.value=true;
+      
+    }catch(e){
+      debugPrint("this is Error$e");
+    }
   }
 }
